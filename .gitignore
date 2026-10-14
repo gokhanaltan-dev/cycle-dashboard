@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+.venv/
+site/
+data/latest.json
+data/latest_demo.json
+data/snapshots_demo.csv
