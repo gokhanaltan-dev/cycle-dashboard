@@ -1,6 +1,6 @@
 {
  "as_of": "2026-10-14",
- "generated": "2026-10-14 22:14 UTC",
+ "generated": "2026-10-14 22:30 UTC",
  "demo": false,
  "macro": {
   "phase": "Mid",
@@ -12,6 +12,64 @@
   "confidence": 19
  },
  "exposure": "normal",
+ "mood": {
+  "stage": "Thrill",
+  "phi": 164.5,
+  "confidence": 24,
+  "gauge": 30,
+  "switches_per_year": 10.2,
+  "turning_points": [
+   {
+    "peak": "1998-07-17",
+    "peak_stage": "Fear",
+    "trough": "1998-08-31",
+    "trough_stage": "Panic",
+    "drawdown": -19.0
+   },
+   {
+    "peak": "2000-03-24",
+    "peak_stage": "Panic",
+    "trough": "2002-10-09",
+    "trough_stage": "Capitulation",
+    "drawdown": -47.5
+   },
+   {
+    "peak": "2007-10-09",
+    "peak_stage": "Fear",
+    "trough": "2009-03-09",
+    "trough_stage": "Depression",
+    "drawdown": -55.2
+   },
+   {
+    "peak": "2018-09-20",
+    "peak_stage": "Excitement",
+    "trough": "2018-12-24",
+    "trough_stage": "Desperation",
+    "drawdown": -19.3
+   },
+   {
+    "peak": "2020-02-19",
+    "peak_stage": "Excitement",
+    "trough": "2020-03-23",
+    "trough_stage": "Panic",
+    "drawdown": -33.7
+   },
+   {
+    "peak": "2022-01-03",
+    "peak_stage": "Fear",
+    "trough": "2022-10-12",
+    "trough_stage": "Depression",
+    "drawdown": -24.5
+   },
+   {
+    "peak": "2025-02-19",
+    "peak_stage": "Euphoria",
+    "trough": "2025-04-08",
+    "trough_stage": "Panic",
+    "drawdown": -18.8
+   }
+  ]
+ },
  "health": {
   "price_last": "2026-10-14",
   "price_stale": false,
@@ -23,6 +81,7 @@
   "fred_via": "csv",
   "stale_series": [],
   "ticker_issues": [],
-  "n_prices": 55
+  "n_prices": 55,
+  "long_history_from": "1998-04-22"
  }
 }
