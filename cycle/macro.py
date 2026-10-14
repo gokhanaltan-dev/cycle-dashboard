@@ -280,8 +280,7 @@ def overlays(fred: dict[str, pd.Series], prices: pd.DataFrame) -> list[dict]:
         rows.append(dict(id="NETLIQ", name="Net liquidity", group="Liquidity", status="missing"))
 
     # market stress gauges from prices
-    for t, name, sign in (("^VIX", "VIX (equity vol)", -1), ("^MOVE", "MOVE (bond vol)", -1),
-                          ("DX-Y.NYB", "US dollar index", 0)):
+    for t, name, sign in (("^VIX", "VIX (equity vol)", -1), ("DX-Y.NYB", "US dollar index", 0)):
         if t in prices and prices[t].notna().sum() > 260:
             rows.append(_overlay_row(t, name, "Market stress", prices[t].dropna(), "", sign, change_periods=63,
                                      z_window=36, z_min=24))

@@ -40,7 +40,7 @@ From then on it rebuilds itself at 22:15 UTC, Monday to Friday. That's 23:15 UK 
 |---|---|
 | Where we stand | Macro phase and market-implied phase, each with a confidence score. Also the exposure verdict and what changed since yesterday, last week and last month. |
 | Cycle clock | Growth level vs momentum, with 12-month trails for both reads. Next to it, how closely current leadership matches each phase over time. |
-| Macro dashboard | Growth composite since 2000, with NBER recessions shaded. Each input gets a z-score, a status and a sparkline. Context cards cover the curve, real yields, inflation, credit spreads, financial conditions, net liquidity, VIX, MOVE and the dollar. |
+| Macro dashboard | Growth composite since 2000, with NBER recessions shaded. Each input gets a z-score, a status and a sparkline. Context cards cover the curve, real yields, inflation, credit spreads, financial conditions, net liquidity, VIX and the dollar. |
 | Rotation | Sortable heatmap for sectors, industries and factors: relative performance, rank changes, RRG quadrant, trend, distance from high and signals. Plus a weekly or daily RRG with tails. |
 | Risk appetite & breadth | 14 intermarket ratios (Discretionary/Staples, Copper/Gold, HYG/IEF, IWM/SPY and others), each with its trend. Also the % of ETFs above their 50/200-day averages. |
 | Rotation alerts | Quadrant changes, rank jumps, relative-strength highs and lows, horizon conflicts, ratio crosses, macro thresholds and phase changes. |

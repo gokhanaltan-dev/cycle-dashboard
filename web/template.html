@@ -298,7 +298,7 @@ footer{margin-top:48px;color:var(--muted);font-size:12px;border-top:1px solid va
       <h3>Exposure verdict</h3>
       <p>Counts passed checks (index trend, risk-appetite ratios, credit spreads, VIX) and subtracts one if the macro phase is Recession. All but one passed = full exposure; down to three missed = normal; at least one net = reduced; otherwise defensive.</p>
       <h3>Caveats</h3>
-      <ul><li>The rotation model is a historical tendency, not a law. Phases vary in length and sometimes get skipped.</li><li>The backtest uses today's revised macro data, so it flatters real-time accuracy. The call log above is the honest record going forward.</li><li>Futures and index series (copper, gold, VIX, MOVE, dollar) trade on different calendars and are aligned to US equity sessions.</li></ul>
+      <ul><li>The rotation model is a historical tendency, not a law. Phases vary in length and sometimes get skipped.</li><li>The backtest uses today's revised macro data, so it flatters real-time accuracy. The call log above is the honest record going forward.</li><li>Futures and index series (copper, gold, VIX, dollar) trade on different calendars and are aligned to US equity sessions.</li></ul>
       <h3>Sources</h3>
       <p>Prices: Yahoo Finance via <code>yfinance</code> (Stooq fallback). Macro: FRED, Federal Reserve Bank of St. Louis. Recession dates: NBER via FRED <code>USREC</code>. Charts: Apache ECharts.</p>
     </details>

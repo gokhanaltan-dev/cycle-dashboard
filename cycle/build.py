@@ -196,6 +196,12 @@ def run(demo: bool = False) -> dict:
     payload["snapshots"] = snaps.tail(30).iloc[::-1].to_dict(orient="records")
 
     payload = _clean(payload)
+    status = dict(as_of=payload["as_of"], generated=payload["generated"], demo=demo,
+                  macro=dict(phase=macro_call["phase"], confidence=macro_call["confidence"], heading=macro_call["heading"]),
+                  market=dict(phase=market_call["phase"], confidence=market_call["confidence"]),
+                  exposure=impl["level"], health=payload["health"])
+    if not demo:
+        (DATA / "status.json").write_text(json.dumps(_clean(status), indent=1))
     (DATA / ("latest_demo.json" if demo else "latest.json")).write_text(json.dumps(payload, separators=(",", ":")))
     SITE.mkdir(exist_ok=True)
     (SITE / "index.html").write_text(render(payload))

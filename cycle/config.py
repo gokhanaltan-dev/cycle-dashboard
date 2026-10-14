@@ -69,7 +69,6 @@ CROSS_ASSET = {
     "CL=F": ("WTI Crude", "Crude"),
     "DX-Y.NYB": ("US Dollar Index", "Dollar"),
     "^VIX": ("VIX", "Volatility"),
-    "^MOVE": ("MOVE (bond vol)", "MOVE"),
     "BTC-USD": ("Bitcoin", "Bitcoin"),
 }
 
@@ -80,7 +79,8 @@ ALL_TICKERS = (
 )
 
 # Tickers whose prices are not USD-denominated equities/ETFs: skip currency check
-NON_EQUITY = {"HG=F", "GC=F", "CL=F", "DX-Y.NYB", "^VIX", "^MOVE", "BTC-USD"}
+# Note: ^MOVE is not used — on Yahoo it resolves to an unrelated bond ETF, not the ICE MOVE index.
+NON_EQUITY = {"HG=F", "GC=F", "CL=F", "DX-Y.NYB", "^VIX", "BTC-USD"}
 
 # ---------------------------------------------------------------------------
 # Macro (FRED). freq: D/W/M. transform: level | yoy | level3m. sign: +1 good when up.
