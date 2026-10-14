@@ -114,3 +114,21 @@ def test_live_code_path_with_mocked_network(monkeypatch, tmp_path):
     assert len(p["health"]["ticker_issues"]) > 0
     assert (tmp_path / "site" / "index.html").exists()
     assert (tmp_path / "data" / "snapshots.csv").exists()
+
+
+def test_emotion_cycle_tracks_a_clean_cycle():
+    from cycle import psych as PS
+
+    assert PS.stage_of(180) == "Euphoria" and PS.stage_of(0) == "Despondency" and PS.stage_of(359) == "Despondency"
+    idx = pd.bdate_range("1995-01-02", periods=7000)
+    t = np.arange(len(idx))
+    wave = np.sin(2 * np.pi * t / 1200)
+    spy = pd.Series(100 * np.exp(0.0002 * t + 0.25 * wave), index=idx)
+    vix = pd.Series(np.exp(np.log(18) - 0.5 * np.gradient(wave) * 1200 / (2 * np.pi) * 0.3), index=idx)
+    df = PS.mood_frame(spy, vix).loc["2005":]
+    peaks = spy.loc["2005":].rolling(601, center=True).max() == spy.loc["2005":]
+    troughs = spy.loc["2005":].rolling(601, center=True).min() == spy.loc["2005":]
+    near_top = {"Excitement", "Thrill", "Euphoria", "Anxiety", "Denial"}
+    near_bottom = {"Panic", "Capitulation", "Despondency", "Depression", "Hope"}
+    assert all(df.loc[d, "stage"] in near_top for d in peaks[peaks].index if d in df.index)
+    assert all(df.loc[d, "stage"] in near_bottom for d in troughs[troughs].index if d in df.index)

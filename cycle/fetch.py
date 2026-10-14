@@ -27,12 +27,12 @@ def _log(msg: str) -> None:
 # ---------------------------------------------------------------------------
 # Prices
 # ---------------------------------------------------------------------------
-def _yf_batch(tickers: list[str], years: int) -> pd.DataFrame:
+def _yf_batch(tickers: list[str], years: int | None) -> pd.DataFrame:
     import yfinance as yf
 
     df = yf.download(
         tickers,
-        period=f"{years}y",
+        period=f"{years}y" if years else "max",
         interval="1d",
         auto_adjust=True,
         progress=False,
@@ -108,6 +108,20 @@ def fetch_prices(tickers: list[str] | None = None, years: int = C.PRICE_HISTORY_
     if missing:
         _log(f"missing tickers: {missing}")
     return prices, health
+
+
+def fetch_long(tickers=("SPY", "^VIX")) -> pd.DataFrame:
+    """Full history for the mood model (S&P 500 since 1993, VIX since 1990). Empty on failure."""
+    for attempt in range(3):
+        try:
+            df = _yf_batch(list(tickers), None)
+            if not df.empty and set(tickers) <= set(df.columns):
+                sessions = df[tickers[0]].dropna().index
+                return df.reindex(sessions).ffill(limit=3)
+        except Exception as e:
+            _log(f"long history attempt {attempt + 1} failed: {e}")
+        time.sleep(5 * (attempt + 1))
+    return pd.DataFrame()
 
 
 # ---------------------------------------------------------------------------

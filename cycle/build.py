@@ -17,6 +17,7 @@ import pandas as pd
 from . import config as C
 from . import macro as M
 from . import market as MK
+from . import psych as PS
 from . import rotation as R
 from .render import render
 
@@ -53,7 +54,9 @@ def run(demo: bool = False) -> dict:
 
     if demo:
         from .demo import demo_fred, demo_prices
+        from .demo import demo_long
         prices, price_health = demo_prices(), {"source": {}, "missing": []}
+        long = demo_long()
         fred, fred_health = demo_fred(), {"failed": [], "via": "demo"}
         ticker_issues = []
     else:
@@ -62,6 +65,7 @@ def run(demo: bool = False) -> dict:
         if prices.empty or C.BENCHMARK not in prices:
             raise SystemExit("No price data (benchmark missing) — aborting so the last good dashboard stays up.")
         fred, fred_health = F.fetch_fred(fred_ids)
+        long = F.fetch_long()
         ticker_issues = F.validate_tickers(DATA / "ticker_meta.json", C.ALL_TICKERS)
 
     last_session = prices.index[-1]
@@ -90,6 +94,9 @@ def run(demo: bool = False) -> dict:
     market_call, market_labels = MK.market_call(prices)
     agreement = MK.compare(macro_call["phase"], market_call["phase"])
 
+    # ---- Market psychology (emotion cycle)
+    psych, psych_stages = PS.psych(prices, long if not long.empty else None)
+
     # ---- Rotation
     sec = [t for t in C.SECTORS if t in prices]
     ind = [t for t in C.INDUSTRIES if t in prices]
@@ -113,6 +120,8 @@ def run(demo: bool = False) -> dict:
     # ---- Alerts
     alerts = R.price_alerts(prices, names, qw[sec + ind], states, market_labels)
     alerts += ratio_alerts + M.macro_alerts(fred)
+    if psych:
+        alerts += PS.psych_alerts(psych_stages, C.ALERT_LOOKBACK_SESSIONS)
     if agreement["state"] != "agree":
         alerts.append(dict(date=last_session, kind="divergence",
                            severity="warning" if agreement["state"] == "conflict" else "watch",
@@ -156,6 +165,7 @@ def run(demo: bool = False) -> dict:
         stale_series=stale_growth + health_rows,
         ticker_issues=ticker_issues,
         n_prices=int(prices.shape[1]),
+        long_history_from=psych["history_start"] if psych else None,
     )
 
     payload = dict(
@@ -174,6 +184,7 @@ def run(demo: bool = False) -> dict:
         breadth=br,
         alerts=[dict(a, date=a["date"].strftime("%Y-%m-%d")) for a in alerts],
         implications=impl,
+        psych=psych,
         names=names,
         health=health,
         config=dict(horizons=list(C.HORIZONS), phases=C.PHASES, templates=C.PHASE_TEMPLATES,
@@ -186,7 +197,7 @@ def run(demo: bool = False) -> dict:
         date=payload["as_of"], macro_phase=macro_call["phase"], macro_conf=macro_call["confidence"],
         market_phase=market_call["phase"], market_conf=market_call["confidence"],
         exposure=impl["level"], top3=" ".join(r["ticker"] for r in boards["sectors"][:3]),
-        risk_appetite=risk,
+        risk_appetite=risk, mood=psych["stage"] if psych else None, greed=psych["gauge"] if psych else None,
     )
     snaps = pd.read_csv(snap_path) if snap_path.exists() else pd.DataFrame(columns=list(snap))
     snaps = snaps[snaps["date"] != snap["date"]]
@@ -199,7 +210,10 @@ def run(demo: bool = False) -> dict:
     status = dict(as_of=payload["as_of"], generated=payload["generated"], demo=demo,
                   macro=dict(phase=macro_call["phase"], confidence=macro_call["confidence"], heading=macro_call["heading"]),
                   market=dict(phase=market_call["phase"], confidence=market_call["confidence"]),
-                  exposure=impl["level"], health=payload["health"])
+                  exposure=impl["level"],
+                  mood=dict(stage=psych["stage"], phi=psych["phi"], confidence=psych["confidence"], gauge=psych["gauge"],
+                            switches_per_year=psych["switches_per_year"], turning_points=psych["turning_points"]) if psych else None,
+                  health=payload["health"])
     if not demo:
         (DATA / "status.json").write_text(json.dumps(_clean(status), indent=1))
     (DATA / ("latest_demo.json" if demo else "latest.json")).write_text(json.dumps(payload, separators=(",", ":")))

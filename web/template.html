@@ -13,7 +13,7 @@
   --s1:#2a78d6;--s2:#eb6834;--s3:#1baf7a;--s4:#eda100;
   --good:#0ca30c;--warn:#fab219;--serious:#ec835a;--crit:#d03b3b;--good-text:#006300;--crit-text:#b42f2f;
   --neutral:#f0efec;--pos:#1c5cab;--neg:#c43a3a;--heat-ink-strong:#ffffff;
-  --q-a:rgba(42,120,214,.06);--q-b:rgba(11,11,11,.03);
+  --q-a:rgba(42,120,214,.06);--q-b:rgba(11,11,11,.03);--q-r:rgba(235,104,52,.12);
   --radius:10px;
   --sans:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
 }
@@ -26,7 +26,7 @@
     --s1:#3987e5;--s2:#d95926;--s3:#199e70;--s4:#c98500;
     --good-text:#0ca30c;--crit-text:#e66767;
     --neutral:#383835;--pos:#3987e5;--neg:#e66767;--heat-ink-strong:#f0efec;
-    --q-a:rgba(57,135,229,.08);--q-b:rgba(255,255,255,.03);
+    --q-a:rgba(57,135,229,.08);--q-b:rgba(255,255,255,.03);--q-r:rgba(217,89,38,.16);
   }
 }
 :root[data-theme="dark"]{
@@ -37,7 +37,7 @@
   --s1:#3987e5;--s2:#d95926;--s3:#199e70;--s4:#c98500;
   --good-text:#0ca30c;--crit-text:#e66767;
   --neutral:#383835;--pos:#3987e5;--neg:#e66767;--heat-ink-strong:#f0efec;
-  --q-a:rgba(57,135,229,.08);--q-b:rgba(255,255,255,.03);
+  --q-a:rgba(57,135,229,.08);--q-b:rgba(255,255,255,.03);--q-r:rgba(217,89,38,.16);
 }
 *{box-sizing:border-box}
 html,body{margin:0;background:var(--page);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.5;-webkit-text-size-adjust:100%}
@@ -63,8 +63,9 @@ section>.lede{font-size:20px;font-weight:600;margin:0 0 16px;letter-spacing:-.01
 .tnum{font-variant-numeric:tabular-nums}
 
 /* hero */
-.hero{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-top:16px}
-@media (max-width:860px){.hero{grid-template-columns:1fr}}
+.hero{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:16px}
+@media (max-width:1100px){.hero{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:620px){.hero{grid-template-columns:1fr}}
 .tile .label{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--ink2)}
 .tile .big{font-size:34px;font-weight:700;letter-spacing:-.02em;line-height:1.1;margin:6px 0 4px}
 .tile .sub{font-size:14px;color:var(--ink2)}
@@ -129,6 +130,19 @@ tbody tr.hl td{background-image:linear-gradient(var(--wash),var(--wash))}
 .phasekey div{font-size:12px;color:var(--ink2);border:1px solid var(--border);border-radius:8px;padding:8px;line-height:1.4}
 .phasekey b{display:block;color:var(--ink);font-size:13px}
 @media (max-width:560px){.phasekey{display:grid}}
+
+/* emotion cycle */
+.wave svg{width:100%;height:auto;display:block;overflow:visible}
+.gaugebar{position:relative;height:14px;border-radius:7px;overflow:hidden;display:flex;margin:14px 0 4px}
+.gaugebar i{display:block;height:100%}
+.gaugemark{position:relative;height:12px}
+.gaugemark b{position:absolute;top:0;width:0;height:0;border-left:7px solid transparent;border-right:7px solid transparent;border-bottom:10px solid var(--ink);transform:translateX(-7px)}
+.gaugescale{display:flex;justify-content:space-between;font-size:11px;color:var(--muted)}
+.comps{list-style:none;margin:14px 0 0;padding:0;display:grid;gap:9px}
+.comps li{display:grid;grid-template-columns:1fr 110px 32px;gap:10px;align-items:center;font-size:13px}
+.comps .bar{height:6px;border-radius:3px;background:var(--grid);position:relative;overflow:hidden}
+.comps .bar i{position:absolute;left:0;top:0;bottom:0;border-radius:3px}
+.zone{display:inline-block;width:14px;height:10px;border-radius:2px;margin-right:6px;vertical-align:-1px;border:1px solid var(--border)}
 
 /* macro cards */
 .mgroup{margin-top:16px}
@@ -201,6 +215,7 @@ footer{margin-top:48px;color:var(--muted);font-size:12px;border-top:1px solid va
       <div class="card tile" id="t-macro"></div>
       <div class="card tile" id="t-market"></div>
       <div class="card tile" id="t-exposure"></div>
+      <div class="card tile" id="t-mood"></div>
     </div>
     <div class="card" style="margin-top:12px">
       <div class="agree"><span class="icon" id="agreeIcon" aria-hidden="true"></span><div id="agreeText"></div></div>
@@ -225,6 +240,32 @@ footer{margin-top:48px;color:var(--muted);font-size:12px;border-top:1px solid va
         <div class="legend" id="lg-phase"></div>
         <div id="c-phase" class="chart tall" role="img" aria-label="Phase match scores over time"></div>
       </div>
+    </div>
+  </section>
+
+  <!-- 2b. EMOTION CYCLE -->
+  <section id="s-psych">
+    <h2>Market psychology</h2>
+    <p class="lede" id="psychLede"></p>
+    <div class="card">
+      <div class="legend"><span><span class="mk mk-macro"></span>Estimated position now</span><span class="muted">Small dots = path over the past 6 months · S&amp;P 500 mood, not the economy</span></div>
+      <div id="c-wave" class="wave"></div>
+      <p class="clockread" id="psychRead"></p>
+    </div>
+    <div class="grid g2" style="margin-top:12px">
+      <div class="card">
+        <div class="tile"><div class="label"><span class="tip" tabindex="0" data-tip="Six market measures, each ranked 0–100 against its own past three years, then averaged. Below 25 = extreme fear, above 75 = extreme greed. Used as a cross-check on the emotion-cycle read.">Fear &amp; greed gauge</span></div></div>
+        <div id="gauge"></div>
+      </div>
+      <div class="card">
+        <div class="tile"><div class="label">How the model read past turning points</div></div>
+        <p class="small ink2" style="margin:8px 0">Every S&amp;P 500 fall of 15% or more since 1998. A good read shows Thrill, Euphoria or Anxiety near the peak and Capitulation, Despondency or Depression near the low. Uses only data available at the time.</p>
+        <div class="tablewrap" style="border:0"><table id="turns"><thead></thead><tbody></tbody></table></div>
+      </div>
+    </div>
+    <div class="card" style="margin-top:12px">
+      <div class="legend"><span><span class="keyline" style="background:var(--s1)"></span>S&amp;P 500 (weekly)</span><span><span class="zone" style="background:var(--q-r)"></span>Risk zone: Thrill · Euphoria · Anxiety</span><span><span class="zone" style="background:var(--q-a)"></span>Opportunity zone: Capitulation · Despondency · Depression</span></div>
+      <div id="c-psychhist" class="chart short" role="img" aria-label="S&P 500 with emotion-cycle zones"></div>
     </div>
   </section>
 
@@ -309,6 +350,8 @@ footer{margin-top:48px;color:var(--muted);font-size:12px;border-top:1px solid va
       <p>Each session the 11 sectors are ranked on blended 3- and 6-month performance relative to SPY. That ranking is correlated (Spearman) with the classic leadership template for each phase (Early: financials, discretionary, real estate, industrials, tech, materials; Mid: tech, communications; Late: energy, materials, staples, health care, utilities; Recession: staples, utilities, health care). Scores are smoothed with a 10-day EMA and a new phase must lead for 5 straight sessions before the call changes.</p>
       <h3>Relative Rotation Graph</h3>
       <p>An approximation of the JdK method (the original formula is proprietary). RS = ETF ÷ SPY, lightly smoothed. <b>RS-Ratio</b> = 100 + z-score of RS against its rolling mean (14 weeks weekly, 63 sessions daily). <b>RS-Momentum</b> = 100 + rate of change of RS-Ratio (4 weeks / 10 sessions) divided by its own volatility. Quadrant labels use a ±0.25 dead-band so ETFs hugging an axis don't flicker.</p>
+      <h3>Market psychology</h3>
+      <p>An estimate of where the S&amp;P 500 sits on the classic cycle of market emotions. <b>Mood level</b> averages three z-scores against their own rolling 10-year history — distance from the 200-day average, position in the 52-week range and the VIX (inverted) — smoothed over about six weeks. <b>Mood momentum</b> is the 3-month change in that level. The angle of the two places the market on the wave: high mood that has stopped rising = Euphoria, low mood that has stopped falling = Despondency. A stage only changes once the reading is clearly closer to the next stage, and a weak signal holds the last position. The fear &amp; greed gauge (momentum, 52-week strength, VIX vs its 50-day, junk-bond demand, safe-haven demand and breadth, each ranked against three years) is a cross-check: when it disagrees, confidence drops. The emotion cycle is a stylised pattern; real markets often have relief rallies and false starts.</p>
       <h3>Exposure verdict</h3>
       <p>Counts passed checks (index trend, risk-appetite ratios, credit spreads, VIX) and subtracts one if the macro phase is Recession. All but one passed = full exposure; down to three missed = normal; at least one net = reduced; otherwise defensive.</p>
       <h3>Caveats</h3>
@@ -332,6 +375,7 @@ const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).
 const pct = (v,d=1) => v==null ? "–" : (v>0?"+":"")+v.toFixed(d)+"%";
 const num = (v,d=2) => v==null ? "–" : (+v).toFixed(d);
 const N = D.names || {};
+const MON = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
 const charts = [];
 
 // ---------- theme toggle (per-viewer convenience only)
@@ -393,6 +437,43 @@ tile($("#t-market"), "Sector leadership says", mk.phase, mk.confidence, css("--s
 $("#agreeIcon").textContent = {agree:"✓", market_leads:"→", market_lags:"←", conflict:"⚠"}[D.agreement.state] || "•";
 $("#agreeText").textContent = D.agreement.text;
 $("#changes").replaceChildren(...D.changed.map(c=>el("li",{}, el("span",{class:"when"},c.when), el("span",{},c.text))));
+
+// ---------- market psychology (static parts)
+const ps = D.psych;
+(function(){
+  if(!ps){ $("#s-psych").hidden = true; $("#t-mood").hidden = true; return; }
+  $("#t-mood").replaceChildren(el("div",{class:"label"},"Market mood"), el("div",{class:"big"}, ps.stage),
+    el("div",{class:"meter","aria-hidden":"true"}, el("i",{style:`width:${ps.confidence}%;background:${css("--ink2")}`})),
+    el("div",{class:"sub tnum"}, `Confidence ${ps.confidence}%`),
+    el("div",{class:"sub"}, ps.gauge==null ? "Fear & greed gauge unavailable" : `Fear & greed ${ps.gauge}/100 · ${ps.gauge_label}`),
+    el("div",{class:"sub"}, `Next on the cycle: ${ps.next_stage}`));
+  $("#psychLede").textContent = `Estimated mood: ${ps.stage}. ${ps.description}`;
+  // turning points table
+  const t = $("#turns");
+  t.querySelector("thead").replaceChildren(el("tr",{}, el("th",{},"Peak"), el("th",{},"Model said"), el("th",{},"Low"), el("th",{},"Model said"), el("th",{class:"num"},"Fall")));
+  const good = (st, set) => set.includes(st);
+  const mon = d => { const [y,m]=d.split("-"); return MON[+m-1]+" "+y; };
+  t.querySelector("tbody").replaceChildren(...ps.turning_points.slice().reverse().map(e=>el("tr",{},
+    el("td",{}, mon(e.peak)), el("td",{class: good(e.peak_stage, ps.risk_zone)?"up":""}, e.peak_stage + (good(e.peak_stage, ps.risk_zone)?" ✓":"")),
+    el("td",{}, mon(e.trough)), el("td",{class: good(e.trough_stage, ps.opportunity_zone)?"up":""}, e.trough_stage + (good(e.trough_stage, ps.opportunity_zone)?" ✓":"")),
+    el("td",{class:"num"}, e.drawdown.toFixed(1)+"%"))));
+  if(!ps.turning_points.length) t.querySelector("tbody").replaceChildren(el("tr",{}, el("td",{colspan:"5",class:"muted"},"No 15% falls in the available history.")));
+})();
+function renderGauge(){
+  const box = $("#gauge"); if(!ps || !box) return;
+  const g = ps.gauge;
+  const bands = [[25,css("--neg"),0.9],[20,css("--neg"),0.45],[10,css("--neutral"),0],[20,css("--pos"),0.45],[25,css("--pos"),0.9]];
+  const bar = el("div",{class:"gaugebar","aria-hidden":"true"}, ...bands.map(([w,c,t])=>el("i",{style:`width:${w}%;background:${mix(css("--neutral"), c, t)}`})));
+  const mark = el("div",{class:"gaugemark"}); if(g!=null) mark.append(el("b",{style:`left:${g}%`}));
+  const comps = el("ul",{class:"comps"}, ...ps.components.map(c=>el("li",{},
+    el("span",{}, el("span",{class:"tip",tabindex:"0","data-tip":c.note}, c.name)),
+    el("span",{class:"bar"}, el("i",{style:`width:${c.score??0}%;background:${c.score==null?css("--axis"):c.score>=50?css("--pos"):css("--neg")}`})),
+    el("b",{class:"num tnum"}, c.score??"–"))));
+  box.replaceChildren(
+    el("div",{style:"display:flex;align-items:baseline;gap:10px;margin-top:6px"}, el("span",{class:"big",style:"font-size:34px;font-weight:700"}, g??"–"), el("span",{class:"ink2"}, ps.gauge_label)),
+    bar, mark, el("div",{class:"gaugescale"}, el("span",{},"Extreme fear"), el("span",{},"Neutral"), el("span",{},"Extreme greed")),
+    comps, el("p",{class:"note"}, ps.agreement));
+}
 
 // ---------- 3. macro cards
 $("#macroLede").textContent = `Growth is ${mc.y>=0?"above":"below"} trend (${mc.y>=0?"+":""}${mc.y.toFixed(2)}σ) and ${mc.x>=0?"improving":"deteriorating"} (momentum ${mc.x>=0?"+":""}${mc.x.toFixed(2)}σ). ${Math.round(mc.agree_level*100)}% of indicators agree on the level, ${Math.round(mc.agree_momentum*100)}% on the direction.`;
@@ -540,7 +621,7 @@ function renderRatios(){
 }
 
 // ---------- 6. alerts
-const KIND = {key:["macro","phase","divergence"], rot:["rrg","rank","conflict"], rs:["rs"], ratio:["ratio"]};
+const KIND = {key:["macro","phase","divergence","psych"], rot:["rrg","rank","conflict"], rs:["rs"], ratio:["ratio"]};
 function renderAlerts(){
   const list = D.alerts.filter(a=> state.alerts==="all" || KIND[state.alerts].includes(a.kind));
   const byDay = {}; for(const a of list){ (byDay[a.date] ||= []).push(a); }
@@ -597,8 +678,9 @@ $("#consistency").textContent = im.consistency + " Favoured by the rotation mode
 })();
 (function(){
   const rows = D.snapshots||[]; const t = $("#snaps");
-  t.querySelector("thead").replaceChildren(el("tr",{}, ...["Date","Macro","Conf","Market","Conf","Exposure","Top 3 sectors","Risk appetite"].map((x,i)=>el("th",{class:[2,4,7].includes(i)?"num":""},x))));
-  t.querySelector("tbody").replaceChildren(...rows.map(s=>el("tr",{}, el("td",{},s.date), el("td",{},s.macro_phase), el("td",{class:"num"},s.macro_conf+"%"), el("td",{},s.market_phase), el("td",{class:"num"},s.market_conf+"%"), el("td",{},s.exposure), el("td",{},s.top3), el("td",{class:"num"}, (+s.risk_appetite).toFixed(2)))));
+  t.querySelector("thead").replaceChildren(el("tr",{}, ...["Date","Macro","Conf","Market","Conf","Exposure","Mood","Greed","Top 3 sectors","Risk appetite"].map((x,i)=>el("th",{class:[2,4,7,9].includes(i)?"num":""},x))));
+  const blank = v => v==null || v==="" || (typeof v==="number" && isNaN(v));
+  t.querySelector("tbody").replaceChildren(...rows.map(s=>el("tr",{}, el("td",{},s.date), el("td",{},s.macro_phase), el("td",{class:"num"},s.macro_conf+"%"), el("td",{},s.market_phase), el("td",{class:"num"},s.market_conf+"%"), el("td",{},s.exposure), el("td",{}, blank(s.mood)?"–":s.mood), el("td",{class:"num"}, blank(s.greed)?"–":Math.round(s.greed)), el("td",{},s.top3), el("td",{class:"num"}, (+s.risk_appetite).toFixed(2)))));
 })();
 $("#foot").textContent = "Built automatically by GitHub Actions after the US close. Not investment advice — a decision aid for your own process.";
 
@@ -614,7 +696,6 @@ function mount(id, key){
   const rec = {id:key, chart, series:[]}; charts.push(rec); return rec;
 }
 const clamp = (v,a=3) => Math.max(-a, Math.min(a, v));
-const MON = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
 function ticksWhenChanged(dates, len){ const set=new Set(); let prev=null; dates.forEach((d,i)=>{ const k=d.slice(0,len); if(k!==prev){ if(prev!==null) set.add(i); prev=k; } }); return set; }
 function monthAxis(dates){ const step = innerWidth < 560 ? 3 : 1; const set=ticksWhenChanged(dates,7); return {interval:(i)=>set.has(i) && (+dates[i].slice(5,7)-1)%step===0, formatter:v=>{ const m=+v.slice(5,7); return m===1? v.slice(0,4) : MON[m-1]; }}; }
 function yearAxis(dates, every=2){ const set=ticksWhenChanged(dates,4); return {interval:(i)=>set.has(i) && (+dates[i].slice(0,4))%every===0, formatter:v=>v.slice(0,4)}; }
@@ -757,6 +838,79 @@ function renderClock(){
     el("span",{class:"mk mk-market"}), el("b",{},"Sector leadership: "), `${where(kNow.a, mk.phase)} (${mk.confidence}% confidence).` + (challenger ? ` ${rawTop} now fits best (hollow marker) — the call flips if that holds for 5 sessions.` : ""));
   $("#phaseKey").replaceChildren(...ORDER.map(p=>el("div",{}, el("b",{}, `${p} · ${INFO[p][0]}`), INFO[p][1], el("br"), el("span",{class:"muted"}, "Leaders: "+leaders(p).join(", ")))));
 }
+function renderWave(){
+  const box = document.getElementById("c-wave"); if(!box || !ps) return;
+  const ns = "http://www.w3.org/2000/svg";
+  const S = (t, a={}, txt) => { const e=document.createElementNS(ns,t); for(const [k,v] of Object.entries(a)) e.setAttribute(k,v); if(txt!=null) e.textContent=txt; return e; };
+  const W=1000, cw = box.clientWidth || 1000, narrow = cw < 620;
+  const k = Math.max(1, 12.5 / (13 * cw / W));          // keep labels ≥ ~12px on screen
+  const H=narrow?690:390, x0=narrow?60:40, x1=W-(narrow?60:40), yc=narrow?H/2-12:H/2+6, A=narrow?178:118;
+  const ink=css("--ink"), ink2=css("--ink2"), muted=css("--muted"), s1=css("--s1"), surf=css("--surface"), grid=css("--grid"), axis=css("--axis"), sans=css("--sans");
+  const unwrap = f => f < 90 ? f + 360 : f;
+  const X = f => x0 + (unwrap(f) - 90) / 360 * (x1 - x0);
+  const Y = f => yc + A * Math.cos(f * Math.PI / 180);
+  const svg = S("svg",{viewBox:`0 0 ${W} ${H}`, role:"img", "aria-label":`Cycle of market emotions. Estimated position: ${ps.stage}.`}); svg.style.fontFamily = sans;
+
+  // average-mood line and the wave
+  svg.append(S("line",{x1:x0, x2:x1, y1:yc, y2:yc, stroke:grid, "stroke-width":1}));
+  svg.append(S("text",{x:x1, y:yc-6, "text-anchor":"end", "font-size":11*k, fill:muted}, "average mood"));
+  let d = ""; for(let f=90; f<=450; f+=2){ const x = x0 + (f-90)/360*(x1-x0), y = yc + A*Math.cos(f*Math.PI/180); d += (f===90?"M":"L")+x.toFixed(1)+","+y.toFixed(1); }
+  svg.append(S("path",{d, fill:"none", stroke:axis, "stroke-width":3, "stroke-linecap":"round"}));
+
+  // stage labels
+  const keep = narrow ? new Set(["Optimism","Euphoria","Fear","Despondency","Hope", ps.stage]) : null;
+  const kx = (x1-x0)/360;
+  for(const st of ps.stages){
+    const f = st.phi, x = X(f), y = Y(f);
+    svg.append(S("circle",{cx:x.toFixed(1), cy:y.toFixed(1), r:(st.name===ps.stage?0:3.5)*Math.min(k,1.5), fill:ink2}));
+    if(keep && !keep.has(st.name)) continue;
+    // outward normal of the curve
+    const sn = Math.sin(f*Math.PI/180);
+    let nx = A*sn*Math.PI/180, ny = kx; const L = Math.hypot(nx, ny); nx/=L; ny/=L;   // n1 points downward
+    const below = (y - yc) > 0.3*A;
+    if(!below){ nx=-nx; ny=-ny; }
+    const crowd = {Capitulation:"end", Depression:"start", Thrill:"end", Anxiety:"start"}[st.name];
+    const far = st.name==="Despondency" ? (narrow ? 1.35 : 1.9) : 1;
+    const dist = 16*k*far; let tx = x + nx*dist, ty = y + ny*dist + (below ? 10*k : -2);
+    let anchor = crowd || (Math.abs(nx) < 0.35 ? "middle" : nx < 0 ? "end" : "start");
+    if(crowd){ tx += (crowd==="end" ? -6 : 6)*k; }
+    if(anchor==="end") tx = Math.max(tx, 6 + 7*k*st.name.length*(narrow?1:0.62)); if(anchor==="start") tx = Math.min(tx, W - 6 - 7*k*st.name.length*(narrow?1:0.62));
+    const isNow = st.name === ps.stage;
+    const t = S("text",{x:tx.toFixed(1), y:ty.toFixed(1), "text-anchor":anchor, "font-size":(isNow?15:13)*k, "font-weight":isNow?750:500, fill:isNow?ink:ink2}, st.name);
+    svg.append(t);
+    const extra = st.name==="Euphoria" ? "maximum risk" : st.name==="Despondency" ? "maximum opportunity" : null;
+    if(extra) svg.append(S("text",{x:tx.toFixed(1), y:(ty + (below?16:-18)*k).toFixed(1), "text-anchor":anchor, "font-size":11*k, fill:muted, "letter-spacing":"0.5"}, extra.toUpperCase()));
+  }
+
+  // trail (past 6 months) and current marker
+  const hov = (node, lines) => { node.addEventListener("pointerenter", ev=>showHov(ev.clientX, ev.clientY, lines.map((l,i)=>i?el("div",{class:"muted"},l):el("b",{},l)))); node.addEventListener("pointermove", ev=>showHov(ev.clientX, ev.clientY, lines.map((l,i)=>i?el("div",{class:"muted"},l):el("b",{},l)))); node.addEventListener("pointerleave", hideHov); node.append(S("title",{}, lines.join(" — "))); return node; };
+  const tr = ps.trail;
+  tr.slice(0,-1).forEach((p,i)=>{ const g=S("g"); g.append(S("circle",{cx:X(p.phi).toFixed(1), cy:Y(p.phi).toFixed(1), r:5*Math.min(k,1.4), fill:s1, "fill-opacity":(0.2+0.6*i/tr.length).toFixed(2), stroke:surf, "stroke-width":1.5})); g.append(S("circle",{cx:X(p.phi), cy:Y(p.phi), r:13, fill:"transparent"})); svg.append(hov(g,[p.d, p.stage])); });
+  const nx = X(ps.phi), ny = Y(ps.phi);
+  const g = S("g");
+  g.append(S("circle",{cx:nx.toFixed(1), cy:ny.toFixed(1), r:12*Math.min(k,1.4), fill:s1, stroke:surf, "stroke-width":3}));
+  svg.append(hov(g,[`Now: ${ps.stage} (estimated)`, `${ps.confidence}% confidence · mood ${ps.y>0?"+":""}${ps.y}σ, momentum ${ps.x>0?"+":""}${ps.x}σ`]));
+  box.replaceChildren(svg);
+
+  const dir = ps.rising ? "rising" : "falling";
+  $("#psychRead").replaceChildren(
+    el("span",{class:"mk mk-macro"}), el("b",{},`${ps.stage} (estimated, ${ps.confidence}% confidence). `),
+    `Mood is ${ps.y>=0?"above":"below"} its long-run average and ${dir}. Before this: ${ps.prev_stage}. Next on the cycle: ${ps.next_stage}. ${ps.agreement}`);
+  renderGauge();
+}
+function renderPsychHist(){
+  if(!ps) return;
+  const rec = mount("c-psychhist","psychhist"), h = ps.history;
+  const zones = (set, color) => { const out=[]; let st=null; h.stage.forEach((s,i)=>{ const inz=set.includes(s); if(inz && st===null) st=i; if((!inz || i===h.stage.length-1) && st!==null){ const end = inz? i : i-1; out.push([{xAxis:h.dates[st], itemStyle:{color}},{xAxis:h.dates[Math.max(end, st)]}]); st=null; } }); return out; };
+  rec.chart.setOption({
+    animation:false, textStyle:baseText(), grid:{left:48,right:16,top:12,bottom:28},
+    tooltip:{trigger:"axis", ...tooltipStyle(), axisPointer:{type:"line", lineStyle:{color:css("--muted")}}, formatter:pp=>{ const i=pp[0].dataIndex; return `<b>${h.stage[i]}</b><br>${h.dates[i]} · S&P 500 ${h.spy[i].toFixed(0)}`; }},
+    xAxis:{type:"category", data:h.dates, boundaryGap:false, ...axisStyle(), splitLine:{show:false}, axisLabel:{color:css("--muted"), fontSize:11, ...yearAxis(h.dates, innerWidth < 560 ? 3 : 1)}},
+    yAxis:{type:"value", ...axisStyle(), scale:true, axisLabel:{color:css("--muted"), fontSize:11}},
+    series:[{name:"S&P 500", type:"line", data:h.spy, showSymbol:false, lineStyle:{width:2, color:css("--s1")}, itemStyle:{color:css("--s1")},
+      markArea:{silent:true, data:[...zones(ps.risk_zone, css("--q-r")), ...zones(ps.opportunity_zone, css("--q-a"))]}}]
+  });
+}
 function renderPhase(){
   const rec = mount("c-phase","phase"), h = mk.history, cols=[css("--s1"),css("--s2"),css("--s3"),css("--s4")];
   $("#lg-phase").replaceChildren(...D.config.phases.map((p,i)=>el("span",{}, el("span",{class:"keyline",style:"background:"+cols[i]}), p)));
@@ -829,6 +983,7 @@ function renderBreadth(){
 }
 function renderCharts(){
   try { renderClock(); } catch(e){ console.error(e); }
+  try { renderWave(); renderPsychHist(); } catch(e){ console.error(e); }
   try { renderPhase(); } catch(e){ console.error(e); }
   try { renderComp(); } catch(e){ console.error(e); }
   try { renderRRG(); } catch(e){ console.error(e); }
@@ -836,7 +991,7 @@ function renderCharts(){
   renderMacroCards(); renderBoard(); renderRatios();
 }
 renderAlerts(); renderCharts();
-let rt; addEventListener("resize", ()=>{ clearTimeout(rt); rt=setTimeout(()=>{ charts.forEach(c=>c.chart.resize()); try{ renderClock(); }catch(e){ console.error(e); } }, 150); });
+let rt; addEventListener("resize", ()=>{ clearTimeout(rt); rt=setTimeout(()=>{ charts.forEach(c=>c.chart.resize()); try{ renderClock(); renderWave(); }catch(e){ console.error(e); } }, 150); });
 })();
 </script>
 </body>

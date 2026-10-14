@@ -79,3 +79,18 @@ def demo_fred(seed: int = 11) -> dict[str, pd.Series]:
     fred["WALCL"] = pd.Series(np.linspace(900_000, 6_800_000, len(wd)), index=wd)
     fred["WTREGEN"] = pd.Series(np.asarray(700 + rng.normal(0, 40, len(wd))), index=wd)
     return fred
+
+
+def demo_long(seed: int = 5) -> pd.DataFrame:
+    """30 years of SPY and VIX with bull/bear cycles, for the mood model."""
+    rng = np.random.default_rng(seed)
+    end = pd.Timestamp.today().normalize()
+    idx = pd.bdate_range(end - pd.DateOffset(years=30), end)
+    n = len(idx)
+    t = np.arange(n)
+    drift = 0.0004 + 0.0012 * np.sin(2 * np.pi * t / 1300)
+    rets = drift + rng.normal(0, 0.011, n)
+    spy = 100 * np.exp(np.cumsum(rets))
+    trend = pd.Series(rets).rolling(60, min_periods=1).mean().to_numpy()
+    vix = np.exp(np.log(18) - 120 * trend + rng.normal(0, 0.06, n))
+    return pd.DataFrame({"SPY": spy, "^VIX": vix}, index=idx)
