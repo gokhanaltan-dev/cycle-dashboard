@@ -1,0 +1,1802 @@
+[
+ {
+  "vix": "none",
+  "level_span": 30,
+  "mom_lag": 126,
+  "mom_span": 10,
+  "peak_hits": 4,
+  "trough_hits": 6,
+  "events": 6,
+  "score": 0.833,
+  "switches_per_year": 9.1,
+  "now": "Excitement",
+  "detail": [
+   [
+    "2000-03-24",
+    "Capitulation",
+    "2002-10-09",
+    "Capitulation"
+   ],
+   [
+    "2007-10-09",
+    "Anxiety",
+    "2009-03-09",
+    "Capitulation"
+   ],
+   [
+    "2018-09-20",
+    "Euphoria",
+    "2018-12-24",
+    "Panic"
+   ],
+   [
+    "2020-02-19",
+    "Excitement",
+    "2020-03-23",
+    "Panic"
+   ],
+   [
+    "2022-01-03",
+    "Denial",
+    "2022-10-12",
+    "Capitulation"
+   ],
+   [
+    "2025-02-19",
+    "Anxiety",
+    "2025-04-08",
+    "Panic"
+   ]
+  ]
+ },
+ {
+  "vix": "none",
+  "level_span": 30,
+  "mom_lag": 126,
+  "mom_span": 15,
+  "peak_hits": 4,
+  "trough_hits": 6,
+  "events": 6,
+  "score": 0.833,
+  "switches_per_year": 9.1,
+  "now": "Excitement",
+  "detail": [
+   [
+    "2000-03-24",
+    "Capitulation",
+    "2002-10-09",
+    "Capitulation"
+   ],
+   [
+    "2007-10-09",
+    "Anxiety",
+    "2009-03-09",
+    "Capitulation"
+   ],
+   [
+    "2018-09-20",
+    "Euphoria",
+    "2018-12-24",
+    "Panic"
+   ],
+   [
+    "2020-02-19",
+    "Excitement",
+    "2020-03-23",
+    "Capitulation"
+   ],
+   [
+    "2022-01-03",
+    "Denial",
+    "2022-10-12",
+    "Capitulation"
+   ],
+   [
+    "2025-02-19",
+    "Anxiety",
+    "2025-04-08",
+    "Panic"
+   ]
+  ]
+ },
+ {
+  "vix": "none",
+  "level_span": 20,
+  "mom_lag": 126,
+  "mom_span": 15,
+  "peak_hits": 4,
+  "trough_hits": 6,
+  "events": 6,
+  "score": 0.833,
+  "switches_per_year": 10.0,
+  "now": "Excitement",
+  "detail": [
+   [
+    "2000-03-24",
+    "Capitulation",
+    "2002-10-09",
+    "Capitulation"
+   ],
+   [
+    "2007-10-09",
+    "Anxiety",
+    "2009-03-09",
+    "Capitulation"
+   ],
+   [
+    "2018-09-20",
+    "Euphoria",
+    "2018-12-24",
+    "Panic"
+   ],
+   [
+    "2020-02-19",
+    "Excitement",
+    "2020-03-23",
+    "Panic"
+   ],
+   [
+    "2022-01-03",
+    "Denial",
+    "2022-10-12",
+    "Capitulation"
+   ],
+   [
+    "2025-02-19",
+    "Euphoria",
+    "2025-04-08",
+    "Panic"
+   ]
+  ]
+ },
+ {
+  "vix": "none",
+  "level_span": 20,
+  "mom_lag": 126,
+  "mom_span": 10,
+  "peak_hits": 4,
+  "trough_hits": 6,
+  "events": 6,
+  "score": 0.833,
+  "switches_per_year": 11.1,
+  "now": "Excitement",
+  "detail": [
+   [
+    "2000-03-24",
+    "Capitulation",
+    "2002-10-09",
+    "Capitulation"
+   ],
+   [
+    "2007-10-09",
+    "Anxiety",
+    "2009-03-09",
+    "Capitulation"
+   ],
+   [
+    "2018-09-20",
+    "Thrill",
+    "2018-12-24",
+    "Panic"
+   ],
+   [
+    "2020-02-19",
+    "Excitement",
+    "2020-03-23",
+    "Panic"
+   ],
+   [
+    "2022-01-03",
+    "Denial",
+    "2022-10-12",
+    "Capitulation"
+   ],
+   [
+    "2025-02-19",
+    "Euphoria",
+    "2025-04-08",
+    "Panic"
+   ]
+  ]
+ },
+ {
+  "vix": "rel1y",
+  "level_span": 20,
+  "mom_lag": 63,
+  "mom_span": 10,
+  "peak_hits": 4,
+  "trough_hits": 6,
+  "events": 6,
+  "score": 0.833,
+  "switches_per_year": 13.0,
+  "now": "Euphoria",
+  "detail": [
+   [
+    "2000-03-24",
+    "Desperation",
+    "2002-10-09",
+    "Capitulation"
+   ],
+   [
+    "2007-10-09",
+    "Desperation",
+    "2009-03-09",
+    "Depression"
+   ],
+   [
+    "2018-09-20",
+    "Excitement",
+    "2018-12-24",
+    "Panic"
+   ],
+   [
+    "2020-02-19",
+    "Thrill",
+    "2020-03-23",
+    "Panic"
+   ],
+   [
+    "2022-01-03",
+    "Anxiety",
+    "2022-10-12",
+    "Depression"
+   ],
+   [
+    "2025-02-19",
+    "Thrill",
+    "2025-04-08",
+    "Panic"
+   ]
+  ]
+ },
+ {
+  "vix": "none",
+  "level_span": 20,
+  "mom_lag": 42,
+  "mom_span": 15,
+  "peak_hits": 5,
+  "trough_hits": 5,
+  "events": 6,
+  "score": 0.833,
+  "switches_per_year": 13.6,
+  "now": "Euphoria",
+  "detail": [
+   [
+    "2000-03-24",
+    "Desperation",
+    "2002-10-09",
+    "Despondency"
+   ],
+   [
+    "2007-10-09",
+    "Anxiety",
+    "2009-03-09",
+    "Despondency"
+   ],
+   [
+    "2018-09-20",
+    "Excitement",
+    "2018-12-24",
+    "Desperation"
+   ],
+   [
+    "2020-02-19",
+    "Thrill",
+    "2020-03-23",
+    "Panic"
+   ],
+   [
+    "2022-01-03",
+    "Thrill",
+    "2022-10-12",
+    "Despondency"
+   ],
+   [
+    "2025-02-19",
+    "Anxiety",
+    "2025-04-08",
+    "Panic"
+   ]
+  ]
+ },
+ {
+  "vix": "z10y",
+  "level_span": 30,
+  "mom_lag": 126,
+  "mom_span": 15,
+  "peak_hits": 3,
+  "trough_hits": 6,
+  "events": 6,
+  "score": 0.75,
+  "switches_per_year": 8.5,
+  "now": "Excitement",
+  "detail": [
+   [
+    "2000-03-24",
+    "Capitulation",
+    "2002-10-09",
+    "Capitulation"
+   ],
+   [
+    "2007-10-09",
+    "Fear",
+    "2009-03-09",
+    "Panic"
+   ],
+   [
+    "2018-09-20",
+    "Thrill",
+    "2018-12-24",
+    "Panic"
+   ],
+   [
+    "2020-02-19",
+    "Excitement",
+    "2020-03-23",
+    "Panic"
+   ],
+   [
+    "2022-01-03",
+    "Fear",
+    "2022-10-12",
+    "Capitulation"
+   ],
+   [
+    "2025-02-19",
+    "Anxiety",
+    "2025-04-08",
+    "Panic"
+   ]
+  ]
+ },
+ {
+  "vix": "z10y",
+  "level_span": 30,
+  "mom_lag": 126,
+  "mom_span": 10,
+  "peak_hits": 3,
+  "trough_hits": 6,
+  "events": 6,
+  "score": 0.75,
+  "switches_per_year": 9.0,
+  "now": "Excitement",
+  "detail": [
+   [
+    "2000-03-24",
+    "Capitulation",
+    "2002-10-09",
+    "Capitulation"
+   ],
+   [
+    "2007-10-09",
+    "Fear",
+    "2009-03-09",
+    "Capitulation"
+   ],
+   [
+    "2018-09-20",
+    "Thrill",
+    "2018-12-24",
+    "Panic"
+   ],
+   [
+    "2020-02-19",
+    "Excitement",
+    "2020-03-23",
+    "Panic"
+   ],
+   [
+    "2022-01-03",
+    "Fear",
+    "2022-10-12",
+    "Capitulation"
+   ],
+   [
+    "2025-02-19",
+    "Euphoria",
+    "2025-04-08",
+    "Panic"
+   ]
+  ]
+ },
+ {
+  "vix": "z10y",
+  "level_span": 20,
+  "mom_lag": 126,
+  "mom_span": 10,
+  "peak_hits": 3,
+  "trough_hits": 6,
+  "events": 6,
+  "score": 0.75,
+  "switches_per_year": 10.4,
+  "now": "Excitement",
+  "detail": [
+   [
+    "2000-03-24",
+    "Despondency",
+    "2002-10-09",
+    "Capitulation"
+   ],
+   [
+    "2007-10-09",
+    "Denial",
+    "2009-03-09",
+    "Capitulation"
+   ],
+   [
+    "2018-09-20",
+    "Thrill",
+    "2018-12-24",
+    "Panic"
+   ],
+   [
+    "2020-02-19",
+    "Excitement",
+    "2020-03-23",
+    "Panic"
+   ],
+   [
+    "2022-01-03",
+    "Fear",
+    "2022-10-12",
+    "Capitulation"
+   ],
+   [
+    "2025-02-19",
+    "Thrill",
+    "2025-04-08",
+    "Panic"
+   ]
+  ]
+ },
+ {
+  "vix": "z10y",
+  "level_span": 20,
+  "mom_lag": 126,
+  "mom_span": 15,
+  "peak_hits": 3,
+  "trough_hits": 6,
+  "events": 6,
+  "score": 0.75,
+  "switches_per_year": 10.8,
+  "now": "Excitement",
+  "detail": [
+   [
+    "2000-03-24",
+    "Capitulation",
+    "2002-10-09",
+    "Capitulation"
+   ],
+   [
+    "2007-10-09",
+    "Fear",
+    "2009-03-09",
+    "Capitulation"
+   ],
+   [
+    "2018-09-20",
+    "Thrill",
+    "2018-12-24",
+    "Panic"
+   ],
+   [
+    "2020-02-19",
+    "Excitement",
+    "2020-03-23",
+    "Panic"
+   ],
+   [
+    "2022-01-03",
+    "Fear",
+    "2022-10-12",
+    "Capitulation"
+   ],
+   [
+    "2025-02-19",
+    "Euphoria",
+    "2025-04-08",
+    "Panic"
+   ]
+  ]
+ },
+ {
+  "vix": "rel1y",
+  "level_span": 20,
+  "mom_lag": 126,
+  "mom_span": 10,
+  "peak_hits": 3,
+  "trough_hits": 6,
+  "events": 6,
+  "score": 0.75,
+  "switches_per_year": 10.9,
+  "now": "Excitement",
+  "detail": [
+   [
+    "2000-03-24",
+    "Panic",
+    "2002-10-09",
+    "Panic"
+   ],
+   [
+    "2007-10-09",
+    "Panic",
+    "2009-03-09",
+    "Capitulation"
+   ],
+   [
+    "2018-09-20",
+    "Excitement",
+    "2018-12-24",
+    "Panic"
+   ],
+   [
+    "2020-02-19",
+    "Excitement",
+    "2020-03-23",
+    "Panic"
+   ],
+   [
+    "2022-01-03",
+    "Fear",
+    "2022-10-12",
+    "Capitulation"
+   ],
+   [
+    "2025-02-19",
+    "Thrill",
+    "2025-04-08",
+    "Panic"
+   ]
+  ]
+ },
+ {
+  "vix": "none",
+  "level_span": 20,
+  "mom_lag": 63,
+  "mom_span": 15,
+  "peak_hits": 4,
+  "trough_hits": 5,
+  "events": 6,
+  "score": 0.75,
+  "switches_per_year": 11.1,
+  "now": "Euphoria",
+  "detail": [
+   [
+    "2000-03-24",
+    "Desperation",
+    "2002-10-09",
+    "Capitulation"
+   ],
+   [
+    "2007-10-09",
+    "Denial",
+    "2009-03-09",
+    "Despondency"
+   ],
+   [
+    "2018-09-20",
+    "Excitement",
+    "2018-12-24",
+    "Desperation"
+   ],
+   [
+    "2020-02-19",
+    "Excitement",
+    "2020-03-23",
+    "Panic"
+   ],
+   [
+    "2022-01-03",
+    "Anxiety",
+    "2022-10-12",
+    "Depression"
+   ],
+   [
+    "2025-02-19",
+    "Anxiety",
+    "2025-04-08",
+    "Panic"
+   ]
+  ]
+ },
+ {
+  "vix": "rel1y",
+  "level_span": 20,
+  "mom_lag": 63,
+  "mom_span": 15,
+  "peak_hits": 3,
+  "trough_hits": 6,
+  "events": 6,
+  "score": 0.75,
+  "switches_per_year": 12.0,
+  "now": "Euphoria",
+  "detail": [
+   [
+    "2000-03-24",
+    "Desperation",
+    "2002-10-09",
+    "Capitulation"
+   ],
+   [
+    "2007-10-09",
+    "Desperation",
+    "2009-03-09",
+    "Depression"
+   ],
+   [
+    "2018-09-20",
+    "Excitement",
+    "2018-12-24",
+    "Panic"
+   ],
+   [
+    "2020-02-19",
+    "Thrill",
+    "2020-03-23",
+    "Panic"
+   ],
+   [
+    "2022-01-03",
+    "Denial",
+    "2022-10-12",
+    "Depression"
+   ],
+   [
+    "2025-02-19",
+    "Thrill",
+    "2025-04-08",
+    "Panic"
+   ]
+  ]
+ },
+ {
+  "vix": "none",
+  "level_span": 20,
+  "mom_lag": 63,
+  "mom_span": 10,
+  "peak_hits": 4,
+  "trough_hits": 5,
+  "events": 6,
+  "score": 0.75,
+  "switches_per_year": 12.1,
+  "now": "Euphoria",
+  "detail": [
+   [
+    "2000-03-24",
+    "Desperation",
+    "2002-10-09",
+    "Capitulation"
+   ],
+   [
+    "2007-10-09",
+    "Denial",
+    "2009-03-09",
+    "Despondency"
+   ],
+   [
+    "2018-09-20",
+    "Excitement",
+    "2018-12-24",
+    "Desperation"
+   ],
+   [
+    "2020-02-19",
+    "Excitement",
+    "2020-03-23",
+    "Panic"
+   ],
+   [
+    "2022-01-03",
+    "Euphoria",
+    "2022-10-12",
+    "Depression"
+   ],
+   [
+    "2025-02-19",
+    "Anxiety",
+    "2025-04-08",
+    "Panic"
+   ]
+  ]
+ },
+ {
+  "vix": "z10y",
+  "level_span": 20,
+  "mom_lag": 42,
+  "mom_span": 15,
+  "peak_hits": 4,
+  "trough_hits": 5,
+  "events": 6,
+  "score": 0.75,
+  "switches_per_year": 13.8,
+  "now": "Thrill",
+  "detail": [
+   [
+    "2000-03-24",
+    "Panic",
+    "2002-10-09",
+    "Despondency"
+   ],
+   [
+    "2007-10-09",
+    "Denial",
+    "2009-03-09",
+    "Despondency"
+   ],
+   [
+    "2018-09-20",
+    "Excitement",
+    "2018-12-24",
+    "Desperation"
+   ],
+   [
+    "2020-02-19",
+    "Thrill",
+    "2020-03-23",
+    "Panic"
+   ],
+   [
+    "2022-01-03",
+    "Euphoria",
+    "2022-10-12",
+    "Despondency"
+   ],
+   [
+    "2025-02-19",
+    "Anxiety",
+    "2025-04-08",
+    "Panic"
+   ]
+  ]
+ },
+ {
+  "vix": "none",
+  "level_span": 20,
+  "mom_lag": 42,
+  "mom_span": 10,
+  "peak_hits": 5,
+  "trough_hits": 4,
+  "events": 6,
+  "score": 0.75,
+  "switches_per_year": 15.1,
+  "now": "Euphoria",
+  "detail": [
+   [
+    "2000-03-24",
+    "Desperation",
+    "2002-10-09",
+    "Depression"
+   ],
+   [
+    "2007-10-09",
+    "Euphoria",
+    "2009-03-09",
+    "Despondency"
+   ],
+   [
+    "2018-09-20",
+    "Excitement",
+    "2018-12-24",
+    "Desperation"
+   ],
+   [
+    "2020-02-19",
+    "Thrill",
+    "2020-03-23",
+    "Desperation"
+   ],
+   [
+    "2022-01-03",
+    "Euphoria",
+    "2022-10-12",
+    "Despondency"
+   ],
+   [
+    "2025-02-19",
+    "Anxiety",
+    "2025-04-08",
+    "Panic"
+   ]
+  ]
+ },
+ {
+  "vix": "rel1y",
+  "level_span": 30,
+  "mom_lag": 126,
+  "mom_span": 15,
+  "peak_hits": 2,
+  "trough_hits": 6,
+  "events": 6,
+  "score": 0.667,
+  "switches_per_year": 9.1,
+  "now": "Excitement",
+  "detail": [
+   [
+    "2000-03-24",
+    "Desperation",
+    "2002-10-09",
+    "Panic"
+   ],
+   [
+    "2007-10-09",
+    "Panic",
+    "2009-03-09",
+    "Panic"
+   ],
+   [
+    "2018-09-20",
+    "Excitement",
+    "2018-12-24",
+    "Capitulation"
+   ],
+   [
+    "2020-02-19",
+    "Excitement",
+    "2020-03-23",
+    "Capitulation"
+   ],
+   [
+    "2022-01-03",
+    "Fear",
+    "2022-10-12",
+    "Capitulation"
+   ],
+   [
+    "2025-02-19",
+    "Denial",
+    "2025-04-08",
+    "Panic"
+   ]
+  ]
+ },
+ {
+  "vix": "z10y",
+  "level_span": 30,
+  "mom_lag": 63,
+  "mom_span": 15,
+  "peak_hits": 3,
+  "trough_hits": 5,
+  "events": 6,
+  "score": 0.667,
+  "switches_per_year": 9.5,
+  "now": "Thrill",
+  "detail": [
+   [
+    "2000-03-24",
+    "Panic",
+    "2002-10-09",
+    "Capitulation"
+   ],
+   [
+    "2007-10-09",
+    "Fear",
+    "2009-03-09",
+    "Depression"
+   ],
+   [
+    "2018-09-20",
+    "Excitement",
+    "2018-12-24",
+    "Desperation"
+   ],
+   [
+    "2020-02-19",
+    "Excitement",
+    "2020-03-23",
+    "Panic"
+   ],
+   [
+    "2022-01-03",
+    "Fear",
+    "2022-10-12",
+    "Depression"
+   ],
+   [
+    "2025-02-19",
+    "Euphoria",
+    "2025-04-08",
+    "Panic"
+   ]
+  ]
+ },
+ {
+  "vix": "none",
+  "level_span": 30,
+  "mom_lag": 63,
+  "mom_span": 10,
+  "peak_hits": 4,
+  "trough_hits": 4,
+  "events": 6,
+  "score": 0.667,
+  "switches_per_year": 9.7,
+  "now": "Euphoria",
+  "detail": [
+   [
+    "2000-03-24",
+    "Panic",
+    "2002-10-09",
+    "Capitulation"
+   ],
+   [
+    "2007-10-09",
+    "Denial",
+    "2009-03-09",
+    "Despondency"
+   ],
+   [
+    "2018-09-20",
+    "Excitement",
+    "2018-12-24",
+    "Desperation"
+   ],
+   [
+    "2020-02-19",
+    "Excitement",
+    "2020-03-23",
+    "Panic"
+   ],
+   [
+    "2022-01-03",
+    "Anxiety",
+    "2022-10-12",
+    "Depression"
+   ],
+   [
+    "2025-02-19",
+    "Anxiety",
+    "2025-04-08",
+    "Desperation"
+   ]
+  ]
+ },
+ {
+  "vix": "rel1y",
+  "level_span": 30,
+  "mom_lag": 126,
+  "mom_span": 10,
+  "peak_hits": 2,
+  "trough_hits": 6,
+  "events": 6,
+  "score": 0.667,
+  "switches_per_year": 9.9,
+  "now": "Excitement",
+  "detail": [
+   [
+    "2000-03-24",
+    "Desperation",
+    "2002-10-09",
+    "Panic"
+   ],
+   [
+    "2007-10-09",
+    "Panic",
+    "2009-03-09",
+    "Capitulation"
+   ],
+   [
+    "2018-09-20",
+    "Excitement",
+    "2018-12-24",
+    "Capitulation"
+   ],
+   [
+    "2020-02-19",
+    "Excitement",
+    "2020-03-23",
+    "Panic"
+   ],
+   [
+    "2022-01-03",
+    "Fear",
+    "2022-10-12",
+    "Capitulation"
+   ],
+   [
+    "2025-02-19",
+    "Denial",
+    "2025-04-08",
+    "Panic"
+   ]
+  ]
+ },
+ {
+  "vix": "none",
+  "level_span": 30,
+  "mom_lag": 63,
+  "mom_span": 15,
+  "peak_hits": 4,
+  "trough_hits": 4,
+  "events": 6,
+  "score": 0.667,
+  "switches_per_year": 9.9,
+  "now": "Euphoria",
+  "detail": [
+   [
+    "2000-03-24",
+    "Panic",
+    "2002-10-09",
+    "Capitulation"
+   ],
+   [
+    "2007-10-09",
+    "Denial",
+    "2009-03-09",
+    "Despondency"
+   ],
+   [
+    "2018-09-20",
+    "Excitement",
+    "2018-12-24",
+    "Desperation"
+   ],
+   [
+    "2020-02-19",
+    "Excitement",
+    "2020-03-23",
+    "Panic"
+   ],
+   [
+    "2022-01-03",
+    "Anxiety",
+    "2022-10-12",
+    "Depression"
+   ],
+   [
+    "2025-02-19",
+    "Anxiety",
+    "2025-04-08",
+    "Desperation"
+   ]
+  ]
+ },
+ {
+  "vix": "rel1y",
+  "level_span": 30,
+  "mom_lag": 63,
+  "mom_span": 15,
+  "peak_hits": 2,
+  "trough_hits": 6,
+  "events": 6,
+  "score": 0.667,
+  "switches_per_year": 10.5,
+  "now": "Thrill",
+  "detail": [
+   [
+    "2000-03-24",
+    "Desperation",
+    "2002-10-09",
+    "Capitulation"
+   ],
+   [
+    "2007-10-09",
+    "Desperation",
+    "2009-03-09",
+    "Depression"
+   ],
+   [
+    "2018-09-20",
+    "Optimism",
+    "2018-12-24",
+    "Panic"
+   ],
+   [
+    "2020-02-19",
+    "Thrill",
+    "2020-03-23",
+    "Panic"
+   ],
+   [
+    "2022-01-03",
+    "Denial",
+    "2022-10-12",
+    "Depression"
+   ],
+   [
+    "2025-02-19",
+    "Thrill",
+    "2025-04-08",
+    "Panic"
+   ]
+  ]
+ },
+ {
+  "vix": "z10y",
+  "level_span": 20,
+  "mom_lag": 63,
+  "mom_span": 15,
+  "peak_hits": 3,
+  "trough_hits": 5,
+  "events": 6,
+  "score": 0.667,
+  "switches_per_year": 10.8,
+  "now": "Euphoria",
+  "detail": [
+   [
+    "2000-03-24",
+    "Panic",
+    "2002-10-09",
+    "Capitulation"
+   ],
+   [
+    "2007-10-09",
+    "Fear",
+    "2009-03-09",
+    "Depression"
+   ],
+   [
+    "2018-09-20",
+    "Excitement",
+    "2018-12-24",
+    "Desperation"
+   ],
+   [
+    "2020-02-19",
+    "Thrill",
+    "2020-03-23",
+    "Panic"
+   ],
+   [
+    "2022-01-03",
+    "Fear",
+    "2022-10-12",
+    "Depression"
+   ],
+   [
+    "2025-02-19",
+    "Euphoria",
+    "2025-04-08",
+    "Panic"
+   ]
+  ]
+ },
+ {
+  "vix": "rel1y",
+  "level_span": 20,
+  "mom_lag": 126,
+  "mom_span": 15,
+  "peak_hits": 2,
+  "trough_hits": 6,
+  "events": 6,
+  "score": 0.667,
+  "switches_per_year": 11.3,
+  "now": "Excitement",
+  "detail": [
+   [
+    "2000-03-24",
+    "Desperation",
+    "2002-10-09",
+    "Capitulation"
+   ],
+   [
+    "2007-10-09",
+    "Panic",
+    "2009-03-09",
+    "Capitulation"
+   ],
+   [
+    "2018-09-20",
+    "Excitement",
+    "2018-12-24",
+    "Capitulation"
+   ],
+   [
+    "2020-02-19",
+    "Excitement",
+    "2020-03-23",
+    "Panic"
+   ],
+   [
+    "2022-01-03",
+    "Fear",
+    "2022-10-12",
+    "Capitulation"
+   ],
+   [
+    "2025-02-19",
+    "Denial",
+    "2025-04-08",
+    "Panic"
+   ]
+  ]
+ },
+ {
+  "vix": "z10y",
+  "level_span": 20,
+  "mom_lag": 63,
+  "mom_span": 10,
+  "peak_hits": 3,
+  "trough_hits": 5,
+  "events": 6,
+  "score": 0.667,
+  "switches_per_year": 11.9,
+  "now": "Euphoria",
+  "detail": [
+   [
+    "2000-03-24",
+    "Panic",
+    "2002-10-09",
+    "Capitulation"
+   ],
+   [
+    "2007-10-09",
+    "Fear",
+    "2009-03-09",
+    "Depression"
+   ],
+   [
+    "2018-09-20",
+    "Thrill",
+    "2018-12-24",
+    "Desperation"
+   ],
+   [
+    "2020-02-19",
+    "Thrill",
+    "2020-03-23",
+    "Panic"
+   ],
+   [
+    "2022-01-03",
+    "Fear",
+    "2022-10-12",
+    "Depression"
+   ],
+   [
+    "2025-02-19",
+    "Euphoria",
+    "2025-04-08",
+    "Panic"
+   ]
+  ]
+ },
+ {
+  "vix": "none",
+  "level_span": 30,
+  "mom_lag": 42,
+  "mom_span": 10,
+  "peak_hits": 5,
+  "trough_hits": 3,
+  "events": 6,
+  "score": 0.667,
+  "switches_per_year": 13.0,
+  "now": "Euphoria",
+  "detail": [
+   [
+    "2000-03-24",
+    "Desperation",
+    "2002-10-09",
+    "Despondency"
+   ],
+   [
+    "2007-10-09",
+    "Anxiety",
+    "2009-03-09",
+    "Despondency"
+   ],
+   [
+    "2018-09-20",
+    "Excitement",
+    "2018-12-24",
+    "Desperation"
+   ],
+   [
+    "2020-02-19",
+    "Excitement",
+    "2020-03-23",
+    "Desperation"
+   ],
+   [
+    "2022-01-03",
+    "Thrill",
+    "2022-10-12",
+    "Despondency"
+   ],
+   [
+    "2025-02-19",
+    "Anxiety",
+    "2025-04-08",
+    "Desperation"
+   ]
+  ]
+ },
+ {
+  "vix": "rel1y",
+  "level_span": 20,
+  "mom_lag": 42,
+  "mom_span": 10,
+  "peak_hits": 2,
+  "trough_hits": 6,
+  "events": 6,
+  "score": 0.667,
+  "switches_per_year": 15.8,
+  "now": "Euphoria",
+  "detail": [
+   [
+    "2000-03-24",
+    "Desperation",
+    "2002-10-09",
+    "Despondency"
+   ],
+   [
+    "2007-10-09",
+    "Panic",
+    "2009-03-09",
+    "Despondency"
+   ],
+   [
+    "2018-09-20",
+    "Excitement",
+    "2018-12-24",
+    "Panic"
+   ],
+   [
+    "2020-02-19",
+    "Euphoria",
+    "2020-03-23",
+    "Panic"
+   ],
+   [
+    "2022-01-03",
+    "Denial",
+    "2022-10-12",
+    "Capitulation"
+   ],
+   [
+    "2025-02-19",
+    "Denial",
+    "2025-04-08",
+    "Panic"
+   ]
+  ]
+ },
+ {
+  "vix": "rel1y",
+  "level_span": 30,
+  "mom_lag": 63,
+  "mom_span": 10,
+  "peak_hits": 2,
+  "trough_hits": 5,
+  "events": 6,
+  "score": 0.583,
+  "switches_per_year": 10.8,
+  "now": "Thrill",
+  "detail": [
+   [
+    "2000-03-24",
+    "Desperation",
+    "2002-10-09",
+    "Capitulation"
+   ],
+   [
+    "2007-10-09",
+    "Desperation",
+    "2009-03-09",
+    "Depression"
+   ],
+   [
+    "2018-09-20",
+    "Optimism",
+    "2018-12-24",
+    "Panic"
+   ],
+   [
+    "2020-02-19",
+    "Thrill",
+    "2020-03-23",
+    "Desperation"
+   ],
+   [
+    "2022-01-03",
+    "Denial",
+    "2022-10-12",
+    "Depression"
+   ],
+   [
+    "2025-02-19",
+    "Thrill",
+    "2025-04-08",
+    "Panic"
+   ]
+  ]
+ },
+ {
+  "vix": "z10y",
+  "level_span": 30,
+  "mom_lag": 42,
+  "mom_span": 15,
+  "peak_hits": 4,
+  "trough_hits": 3,
+  "events": 6,
+  "score": 0.583,
+  "switches_per_year": 12.2,
+  "now": "Thrill",
+  "detail": [
+   [
+    "2000-03-24",
+    "Panic",
+    "2002-10-09",
+    "Despondency"
+   ],
+   [
+    "2007-10-09",
+    "Fear",
+    "2009-03-09",
+    "Depression"
+   ],
+   [
+    "2018-09-20",
+    "Excitement",
+    "2018-12-24",
+    "Desperation"
+   ],
+   [
+    "2020-02-19",
+    "Thrill",
+    "2020-03-23",
+    "Desperation"
+   ],
+   [
+    "2022-01-03",
+    "Anxiety",
+    "2022-10-12",
+    "Despondency"
+   ],
+   [
+    "2025-02-19",
+    "Anxiety",
+    "2025-04-08",
+    "Desperation"
+   ]
+  ]
+ },
+ {
+  "vix": "none",
+  "level_span": 30,
+  "mom_lag": 42,
+  "mom_span": 15,
+  "peak_hits": 4,
+  "trough_hits": 3,
+  "events": 6,
+  "score": 0.583,
+  "switches_per_year": 12.3,
+  "now": "Euphoria",
+  "detail": [
+   [
+    "2000-03-24",
+    "Desperation",
+    "2002-10-09",
+    "Despondency"
+   ],
+   [
+    "2007-10-09",
+    "Denial",
+    "2009-03-09",
+    "Despondency"
+   ],
+   [
+    "2018-09-20",
+    "Excitement",
+    "2018-12-24",
+    "Desperation"
+   ],
+   [
+    "2020-02-19",
+    "Excitement",
+    "2020-03-23",
+    "Desperation"
+   ],
+   [
+    "2022-01-03",
+    "Thrill",
+    "2022-10-12",
+    "Despondency"
+   ],
+   [
+    "2025-02-19",
+    "Anxiety",
+    "2025-04-08",
+    "Desperation"
+   ]
+  ]
+ },
+ {
+  "vix": "rel1y",
+  "level_span": 30,
+  "mom_lag": 42,
+  "mom_span": 15,
+  "peak_hits": 3,
+  "trough_hits": 4,
+  "events": 6,
+  "score": 0.583,
+  "switches_per_year": 12.7,
+  "now": "Thrill",
+  "detail": [
+   [
+    "2000-03-24",
+    "Desperation",
+    "2002-10-09",
+    "Despondency"
+   ],
+   [
+    "2007-10-09",
+    "Panic",
+    "2009-03-09",
+    "Depression"
+   ],
+   [
+    "2018-09-20",
+    "Optimism",
+    "2018-12-24",
+    "Desperation"
+   ],
+   [
+    "2020-02-19",
+    "Thrill",
+    "2020-03-23",
+    "Desperation"
+   ],
+   [
+    "2022-01-03",
+    "Anxiety",
+    "2022-10-12",
+    "Despondency"
+   ],
+   [
+    "2025-02-19",
+    "Anxiety",
+    "2025-04-08",
+    "Panic"
+   ]
+  ]
+ },
+ {
+  "vix": "z10y",
+  "level_span": 30,
+  "mom_lag": 42,
+  "mom_span": 10,
+  "peak_hits": 4,
+  "trough_hits": 3,
+  "events": 6,
+  "score": 0.583,
+  "switches_per_year": 13.6,
+  "now": "Thrill",
+  "detail": [
+   [
+    "2000-03-24",
+    "Panic",
+    "2002-10-09",
+    "Despondency"
+   ],
+   [
+    "2007-10-09",
+    "Fear",
+    "2009-03-09",
+    "Depression"
+   ],
+   [
+    "2018-09-20",
+    "Excitement",
+    "2018-12-24",
+    "Desperation"
+   ],
+   [
+    "2020-02-19",
+    "Thrill",
+    "2020-03-23",
+    "Desperation"
+   ],
+   [
+    "2022-01-03",
+    "Anxiety",
+    "2022-10-12",
+    "Despondency"
+   ],
+   [
+    "2025-02-19",
+    "Anxiety",
+    "2025-04-08",
+    "Desperation"
+   ]
+  ]
+ },
+ {
+  "vix": "rel1y",
+  "level_span": 20,
+  "mom_lag": 42,
+  "mom_span": 15,
+  "peak_hits": 1,
+  "trough_hits": 6,
+  "events": 6,
+  "score": 0.583,
+  "switches_per_year": 14.9,
+  "now": "Thrill",
+  "detail": [
+   [
+    "2000-03-24",
+    "Desperation",
+    "2002-10-09",
+    "Despondency"
+   ],
+   [
+    "2007-10-09",
+    "Panic",
+    "2009-03-09",
+    "Depression"
+   ],
+   [
+    "2018-09-20",
+    "Optimism",
+    "2018-12-24",
+    "Panic"
+   ],
+   [
+    "2020-02-19",
+    "Euphoria",
+    "2020-03-23",
+    "Panic"
+   ],
+   [
+    "2022-01-03",
+    "Denial",
+    "2022-10-12",
+    "Despondency"
+   ],
+   [
+    "2025-02-19",
+    "Denial",
+    "2025-04-08",
+    "Panic"
+   ]
+  ]
+ },
+ {
+  "vix": "z10y",
+  "level_span": 20,
+  "mom_lag": 42,
+  "mom_span": 10,
+  "peak_hits": 3,
+  "trough_hits": 4,
+  "events": 6,
+  "score": 0.583,
+  "switches_per_year": 15.3,
+  "now": "Euphoria",
+  "detail": [
+   [
+    "2000-03-24",
+    "Panic",
+    "2002-10-09",
+    "Despondency"
+   ],
+   [
+    "2007-10-09",
+    "Denial",
+    "2009-03-09",
+    "Despondency"
+   ],
+   [
+    "2018-09-20",
+    "Excitement",
+    "2018-12-24",
+    "Desperation"
+   ],
+   [
+    "2020-02-19",
+    "Thrill",
+    "2020-03-23",
+    "Desperation"
+   ],
+   [
+    "2022-01-03",
+    "Euphoria",
+    "2022-10-12",
+    "Despondency"
+   ],
+   [
+    "2025-02-19",
+    "Denial",
+    "2025-04-08",
+    "Panic"
+   ]
+  ]
+ },
+ {
+  "vix": "z10y",
+  "level_span": 30,
+  "mom_lag": 63,
+  "mom_span": 10,
+  "peak_hits": 3,
+  "trough_hits": 3,
+  "events": 6,
+  "score": 0.5,
+  "switches_per_year": 9.8,
+  "now": "Thrill",
+  "detail": [
+   [
+    "2000-03-24",
+    "Panic",
+    "2002-10-09",
+    "Capitulation"
+   ],
+   [
+    "2007-10-09",
+    "Fear",
+    "2009-03-09",
+    "Depression"
+   ],
+   [
+    "2018-09-20",
+    "Excitement",
+    "2018-12-24",
+    "Desperation"
+   ],
+   [
+    "2020-02-19",
+    "Excitement",
+    "2020-03-23",
+    "Desperation"
+   ],
+   [
+    "2022-01-03",
+    "Fear",
+    "2022-10-12",
+    "Depression"
+   ],
+   [
+    "2025-02-19",
+    "Euphoria",
+    "2025-04-08",
+    "Desperation"
+   ]
+  ]
+ },
+ {
+  "vix": "rel1y",
+  "level_span": 30,
+  "mom_lag": 42,
+  "mom_span": 10,
+  "peak_hits": 1,
+  "trough_hits": 4,
+  "events": 6,
+  "score": 0.417,
+  "switches_per_year": 14.1,
+  "now": "Thrill",
+  "detail": [
+   [
+    "2000-03-24",
+    "Desperation",
+    "2002-10-09",
+    "Despondency"
+   ],
+   [
+    "2007-10-09",
+    "Panic",
+    "2009-03-09",
+    "Depression"
+   ],
+   [
+    "2018-09-20",
+    "Optimism",
+    "2018-12-24",
+    "Desperation"
+   ],
+   [
+    "2020-02-19",
+    "Thrill",
+    "2020-03-23",
+    "Desperation"
+   ],
+   [
+    "2022-01-03",
+    "Denial",
+    "2022-10-12",
+    "Despondency"
+   ],
+   [
+    "2025-02-19",
+    "Denial",
+    "2025-04-08",
+    "Panic"
+   ]
+  ]
+ }
+]
