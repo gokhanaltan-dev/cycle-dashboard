@@ -1,0 +1,27 @@
+name: Calibrate psychology model
+
+# Manual only: re-scores emotion-cycle model variants on real history
+on:
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  calibrate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - run: python tools/calibrate_psych.py
+      - name: Save results
+        run: |
+          git config user.name "cycle-dashboard-bot"
+          git config user.email "cycle-dashboard-bot@users.noreply.github.com"
+          git add data/calib_psych.json
+          git diff --cached --quiet || (git commit -m "Psychology model calibration $(date -u +%F)" && git pull --rebase --autostash && git push)
