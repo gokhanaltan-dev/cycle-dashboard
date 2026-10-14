@@ -259,7 +259,7 @@ footer{margin-top:48px;color:var(--muted);font-size:12px;border-top:1px solid va
       </div>
       <div class="card">
         <div class="tile"><div class="label">How the model read past turning points</div></div>
-        <p class="small ink2" style="margin:8px 0">Every S&amp;P 500 fall of 15% or more since 1998. A good read shows Thrill, Euphoria or Anxiety near the peak and Capitulation, Despondency or Depression near the low. Uses only data available at the time.</p>
+        <p class="small ink2" style="margin:8px 0">Every S&amp;P 500 fall of 15% or more since 1998. A good read (✓) is Excitement through Anxiety at the peak and Panic through Hope at the low. Uses only data available at the time; readings before about 2003 have little history to judge against.</p>
         <div class="tablewrap" style="border:0"><table id="turns"><thead></thead><tbody></tbody></table></div>
       </div>
     </div>
@@ -351,7 +351,7 @@ footer{margin-top:48px;color:var(--muted);font-size:12px;border-top:1px solid va
       <h3>Relative Rotation Graph</h3>
       <p>An approximation of the JdK method (the original formula is proprietary). RS = ETF ÷ SPY, lightly smoothed. <b>RS-Ratio</b> = 100 + z-score of RS against its rolling mean (14 weeks weekly, 63 sessions daily). <b>RS-Momentum</b> = 100 + rate of change of RS-Ratio (4 weeks / 10 sessions) divided by its own volatility. Quadrant labels use a ±0.25 dead-band so ETFs hugging an axis don't flicker.</p>
       <h3>Market psychology</h3>
-      <p>An estimate of where the S&amp;P 500 sits on the classic cycle of market emotions. <b>Mood level</b> averages three z-scores against their own rolling 10-year history — distance from the 200-day average, position in the 52-week range and the VIX (inverted) — smoothed over about six weeks. <b>Mood momentum</b> is the 3-month change in that level. The angle of the two places the market on the wave: high mood that has stopped rising = Euphoria, low mood that has stopped falling = Despondency. A stage only changes once the reading is clearly closer to the next stage, and a weak signal holds the last position. The fear &amp; greed gauge (momentum, 52-week strength, VIX vs its 50-day, junk-bond demand, safe-haven demand and breadth, each ranked against three years) is a cross-check: when it disagrees, confidence drops. The emotion cycle is a stylised pattern; real markets often have relief rallies and false starts.</p>
+      <p>An estimate of where the S&amp;P 500 sits on the classic cycle of market emotions. <b>Mood level</b> averages two z-scores against their own rolling 10-year history — distance from the 200-day average and position in the 52-week range — smoothed over about six weeks. <b>Mood momentum</b> is the 6-month change in that level. These settings were picked by scoring 36 variants on every ≥15% S&amp;P 500 fall since 2000; the chosen one reads 10 of the 12 peaks and lows in the right zone. With so few events, treat that as a sanity check, not proof. Adding the VIX to the position made it noisier, so the VIX feeds the gauge instead. The angle of the two places the market on the wave: high mood that has stopped rising = Euphoria, low mood that has stopped falling = Despondency. A stage only changes once the reading is clearly closer to the next stage, and a weak signal holds the last position. The fear &amp; greed gauge (momentum, 52-week strength, VIX vs its 50-day, junk-bond demand, safe-haven demand and breadth, each ranked against three years) is a cross-check: when it disagrees, confidence drops. The emotion cycle is a stylised pattern; real markets often have relief rallies and false starts.</p>
       <h3>Exposure verdict</h3>
       <p>Counts passed checks (index trend, risk-appetite ratios, credit spreads, VIX) and subtracts one if the macro phase is Recession. All but one passed = full exposure; down to three missed = normal; at least one net = reduced; otherwise defensive.</p>
       <h3>Caveats</h3>
@@ -454,8 +454,8 @@ const ps = D.psych;
   const good = (st, set) => set.includes(st);
   const mon = d => { const [y,m]=d.split("-"); return MON[+m-1]+" "+y; };
   t.querySelector("tbody").replaceChildren(...ps.turning_points.slice().reverse().map(e=>el("tr",{},
-    el("td",{}, mon(e.peak)), el("td",{class: good(e.peak_stage, ps.risk_zone)?"up":""}, e.peak_stage + (good(e.peak_stage, ps.risk_zone)?" ✓":"")),
-    el("td",{}, mon(e.trough)), el("td",{class: good(e.trough_stage, ps.opportunity_zone)?"up":""}, e.trough_stage + (good(e.trough_stage, ps.opportunity_zone)?" ✓":"")),
+    el("td",{}, mon(e.peak)), el("td",{class: good(e.peak_stage, ps.peak_ok)?"up":""}, e.peak_stage + (good(e.peak_stage, ps.peak_ok)?" ✓":"")),
+    el("td",{}, mon(e.trough)), el("td",{class: good(e.trough_stage, ps.trough_ok)?"up":""}, e.trough_stage + (good(e.trough_stage, ps.trough_ok)?" ✓":"")),
     el("td",{class:"num"}, e.drawdown.toFixed(1)+"%"))));
   if(!ps.turning_points.length) t.querySelector("tbody").replaceChildren(el("tr",{}, el("td",{colspan:"5",class:"muted"},"No 15% falls in the available history.")));
 })();

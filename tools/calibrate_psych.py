@@ -20,8 +20,10 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from cycle import fetch as F  # noqa: E402
 from cycle import psych as PS  # noqa: E402
 
-PEAK_OK = {"Excitement", "Thrill", "Euphoria", "Anxiety"}
-TROUGH_OK = {"Panic", "Capitulation", "Despondency", "Depression", "Hope"}
+# NB: the live model's settings live in cycle/psych.py (LEVEL_SPAN, MOM_LAG, MOM_SPAN, USE_VIX).
+
+PEAK_OK = set(PS.PEAK_OK)
+TROUGH_OK = set(PS.TROUGH_OK)
 
 
 def variant_frame(spy, vix, vix_mode, lvl_span, mom_lag, mom_span):

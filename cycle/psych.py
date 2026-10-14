@@ -3,13 +3,12 @@
 fear → panic → capitulation → despondency → hope → relief → optimism).
 
 Method
-  Mood level (y) = average of three z-scores, each against its own rolling
+  Mood level (y) = average of two z-scores, each against its own rolling
     10-year history:
       - S&P 500 distance from its 200-day average
       - S&P 500 position in its 52-week range
-      - VIX (inverted: low volatility = complacent mood)
     smoothed with a 30-day EMA.
-  Mood momentum (x) = 3-month change in mood level, z-scored the same way.
+  Mood momentum (x) = 6-month change in mood level, z-scored the same way.
   Position on the emotion wave = the angle of (x, y): bottom = low mood that has
     stopped falling (despondency), top = high mood that has stopped rising
     (euphoria), rising half = momentum up, falling half = momentum down.
@@ -46,6 +45,9 @@ NAMES = [s[0] for s in STAGES]
 RISK_ZONE = {"Thrill", "Euphoria", "Anxiety"}
 OPPORTUNITY_ZONE = {"Capitulation", "Despondency", "Depression"}
 KEY_STAGES = {"Euphoria", "Anxiety", "Panic", "Capitulation", "Despondency", "Hope"}
+# what counts as a "good read" at past turning points (also used by tools/calibrate_psych.py)
+PEAK_OK = ["Excitement", "Thrill", "Euphoria", "Anxiety"]
+TROUGH_OK = ["Panic", "Capitulation", "Despondency", "Depression", "Hope"]
 
 Z_WIN, Z_MIN = 2520, 504
 
@@ -65,7 +67,9 @@ def _z(s: pd.Series, win: int = Z_WIN, minp: int = Z_MIN) -> pd.Series:
     return ((s - mu) / sd).clip(-4, 4)
 
 
-LEVEL_SPAN, MOM_LAG, MOM_SPAN, R_MIN, STAGE_MARGIN = 30, 63, 15, 0.4, 10
+# Chosen by tools/calibrate_psych.py: best score on the turning points of every ≥15% fall since 2000
+# (10 of 12) with the fewest stage changes. VIX made the position noisier, so it feeds the gauge instead.
+LEVEL_SPAN, MOM_LAG, MOM_SPAN, R_MIN, STAGE_MARGIN, USE_VIX = 30, 126, 10, 0.4, 10, False
 CENTRE = {n: a for n, a, _ in STAGES}
 
 
@@ -73,14 +77,15 @@ def _dist(p: float, a: float) -> float:
     return abs(((p - a + 180) % 360) - 180)
 
 
-def mood_frame(spy: pd.Series, vix: pd.Series, win: int = Z_WIN, minp: int = Z_MIN) -> pd.DataFrame:
-    df = pd.DataFrame({"spy": spy, "vix": vix}).dropna()
+def mood_frame(spy: pd.Series, vix: pd.Series | None = None, win: int = Z_WIN, minp: int = Z_MIN) -> pd.DataFrame:
+    use_vix = USE_VIX and vix is not None
+    df = pd.DataFrame({"spy": spy, "vix": vix if use_vix else 1.0}).dropna()
     _zz = lambda x: _z(x, win, minp)
     ext = df["spy"] / df["spy"].rolling(200).mean() - 1
     lo, hi = df["spy"].rolling(252).min(), df["spy"].rolling(252).max()
     rng = (df["spy"] - lo) / (hi - lo)
-    vz = -_zz(np.log(df["vix"]))
-    level = pd.concat([_zz(ext), _zz(rng), vz], axis=1).mean(axis=1, skipna=False)
+    parts = [_zz(ext), _zz(rng)] + ([-_zz(np.log(df["vix"]))] if use_vix else [])
+    level = pd.concat(parts, axis=1).mean(axis=1, skipna=False)
     level = level.ewm(span=LEVEL_SPAN, adjust=False).mean()
     mom = _zz(level - level.shift(MOM_LAG)).ewm(span=MOM_SPAN, adjust=False).mean()
     out = pd.DataFrame({"spy": df["spy"], "y": level, "x": mom}).dropna()
@@ -178,10 +183,10 @@ def turning_points(df: pd.DataFrame, threshold: float = 0.15, since: str = "1998
 def psych(prices: pd.DataFrame, long: pd.DataFrame | None) -> tuple[dict | None, pd.Series]:
     """Returns (payload, stage series). Falls back to the shorter price history with
     3-year z-scores if the long download failed; returns (None, empty) if even that is too short."""
-    if long is not None and {"SPY", "^VIX"} <= set(long.columns) and len(long) > 1500:
-        df = mood_frame(long["SPY"], long["^VIX"])
-    elif {"SPY", "^VIX"} <= set(prices.columns):
-        df = mood_frame(prices["SPY"], prices["^VIX"], win=756, minp=252)
+    if long is not None and "SPY" in long and len(long) > 1500:
+        df = mood_frame(long["SPY"], long.get("^VIX"))
+    elif "SPY" in prices:
+        df = mood_frame(prices["SPY"], prices.get("^VIX"), win=756, minp=252)
     else:
         df = pd.DataFrame()
     if df.empty:
@@ -223,6 +228,7 @@ def psych(prices: pd.DataFrame, long: pd.DataFrame | None) -> tuple[dict | None,
         history=hist,
         turning_points=turning_points(df),
         risk_zone=sorted(RISK_ZONE), opportunity_zone=sorted(OPPORTUNITY_ZONE),
+        peak_ok=PEAK_OK, trough_ok=TROUGH_OK,
         history_start=df.index[0].strftime("%Y-%m-%d"),
         switches_per_year=round(float(df["stage"].iloc[-1260:].ne(df["stage"].iloc[-1260:].shift(1)).sum()) / 5, 1),
     )
