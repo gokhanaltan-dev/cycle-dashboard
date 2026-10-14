@@ -1,0 +1,394 @@
+{
+ "BTC-USD": {
+  "checked": "2026-10-14T21:26:40.313139+00:00",
+  "currency": "USD",
+  "exchange": "CCC",
+  "name": "Bitcoin USD",
+  "type": "CRYPTOCURRENCY"
+ },
+ "CL=F": {
+  "checked": "2026-10-14T21:26:38.641216+00:00",
+  "currency": "USD",
+  "exchange": "NY Mercantile",
+  "name": "Crude Oil Nov 26",
+  "type": "FUTURE"
+ },
+ "COPX": {
+  "checked": "2026-10-14T21:26:28.877672+00:00",
+  "currency": "USD",
+  "exchange": "NYSEArca",
+  "name": "Global X Copper Miners ETF",
+  "type": "ETF"
+ },
+ "DBC": {
+  "checked": "2026-10-14T21:26:37.384207+00:00",
+  "currency": "USD",
+  "exchange": "NYSEArca",
+  "name": "Invesco DB Commodity Index Tracking Fund",
+  "type": "ETF"
+ },
+ "DX-Y.NYB": {
+  "checked": "2026-10-14T21:26:39.057314+00:00",
+  "currency": "USD",
+  "exchange": "ICE Futures",
+  "name": "US Dollar Index",
+  "type": "INDEX"
+ },
+ "GC=F": {
+  "checked": "2026-10-14T21:26:38.227544+00:00",
+  "currency": "USD",
+  "exchange": "COMEX",
+  "name": "Gold Dec 26",
+  "type": "FUTURE"
+ },
+ "GDX": {
+  "checked": "2026-10-14T21:26:28.454577+00:00",
+  "currency": "USD",
+  "exchange": "NYSEArca",
+  "name": "VanEck Gold Miners ETF",
+  "type": "ETF"
+ },
+ "GLD": {
+  "checked": "2026-10-14T21:26:36.942379+00:00",
+  "currency": "USD",
+  "exchange": "NYSEArca",
+  "name": "SPDR Gold Shares",
+  "type": "ETF"
+ },
+ "HG=F": {
+  "checked": "2026-10-14T21:26:37.804708+00:00",
+  "currency": "USD",
+  "exchange": "COMEX",
+  "name": "Copper Dec 26",
+  "type": "FUTURE"
+ },
+ "HYG": {
+  "checked": "2026-10-14T21:26:36.083866+00:00",
+  "currency": "USD",
+  "exchange": "NYSEArca",
+  "name": "iShares iBoxx $ High Yield Corporate Bond ETF",
+  "type": "ETF"
+ },
+ "IAI": {
+  "checked": "2026-10-14T21:26:23.286560+00:00",
+  "currency": "USD",
+  "exchange": "NYSEArca",
+  "name": "iShares U.S. Broker-Dealers & Securities Exchanges ETF",
+  "type": "ETF"
+ },
+ "IEF": {
+  "checked": "2026-10-14T21:26:35.181161+00:00",
+  "currency": "USD",
+  "exchange": "NasdaqGM",
+  "name": "iShares 7-10 Year Treasury Bond ETF",
+  "type": "ETF"
+ },
+ "IGV": {
+  "checked": "2026-10-14T21:26:21.535522+00:00",
+  "currency": "USD",
+  "exchange": "Cboe US",
+  "name": "iShares Expanded Tech-Software Sector ETF",
+  "type": "ETF"
+ },
+ "IHI": {
+  "checked": "2026-10-14T21:26:22.393957+00:00",
+  "currency": "USD",
+  "exchange": "NYSEArca",
+  "name": "iShares U.S. Medical Devices ETF",
+  "type": "ETF"
+ },
+ "ITA": {
+  "checked": "2026-10-14T21:26:26.694327+00:00",
+  "currency": "USD",
+  "exchange": "Cboe US",
+  "name": "iShares U.S. Aerospace & Defense ETF",
+  "type": "ETF"
+ },
+ "ITB": {
+  "checked": "2026-10-14T21:26:24.203014+00:00",
+  "currency": "USD",
+  "exchange": "Cboe US",
+  "name": "iShares U.S. Home Construction ETF",
+  "type": "ETF"
+ },
+ "IWD": {
+  "checked": "2026-10-14T21:26:33.335455+00:00",
+  "currency": "USD",
+  "exchange": "NYSEArca",
+  "name": "iShares Russell 1000 Value ETF",
+  "type": "ETF"
+ },
+ "IWF": {
+  "checked": "2026-10-14T21:26:32.901761+00:00",
+  "currency": "USD",
+  "exchange": "NYSEArca",
+  "name": "iShares Russell 1000 Growth ETF",
+  "type": "ETF"
+ },
+ "IWM": {
+  "checked": "2026-10-14T21:26:30.154532+00:00",
+  "currency": "USD",
+  "exchange": "NYSEArca",
+  "name": "iShares Russell 2000 ETF",
+  "type": "ETF"
+ },
+ "IYT": {
+  "checked": "2026-10-14T21:26:27.186100+00:00",
+  "currency": "USD",
+  "exchange": "Cboe US",
+  "name": "iShares Transportation Average ETF",
+  "type": "ETF"
+ },
+ "JETS": {
+  "checked": "2026-10-14T21:26:27.600890+00:00",
+  "currency": "USD",
+  "exchange": "NYSEArca",
+  "name": "U.S. Global Jets ETF",
+  "type": "ETF"
+ },
+ "KIE": {
+  "checked": "2026-10-14T21:26:23.720076+00:00",
+  "currency": "USD",
+  "exchange": "NYSEArca",
+  "name": "State Street SPDR S&P Insurance ETF",
+  "type": "ETF"
+ },
+ "KRE": {
+  "checked": "2026-10-14T21:26:22.824532+00:00",
+  "currency": "USD",
+  "exchange": "NYSEArca",
+  "name": "State Street SPDR S&P Regional Banking ETF",
+  "type": "ETF"
+ },
+ "LQD": {
+  "checked": "2026-10-14T21:26:36.533810+00:00",
+  "currency": "USD",
+  "exchange": "NYSEArca",
+  "name": "iShares iBoxx $ Investment Grade Corporate Bond ETF",
+  "type": "ETF"
+ },
+ "MTUM": {
+  "checked": "2026-10-14T21:26:31.103552+00:00",
+  "currency": "USD",
+  "exchange": "Cboe US",
+  "name": "iShares MSCI USA Momentum Factor ETF",
+  "type": "ETF"
+ },
+ "OIH": {
+  "checked": "2026-10-14T21:26:26.195729+00:00",
+  "currency": "USD",
+  "exchange": "NYSEArca",
+  "name": "VanEck Oil Services ETF",
+  "type": "ETF"
+ },
+ "PAVE": {
+  "checked": "2026-10-14T21:26:29.296647+00:00",
+  "currency": "USD",
+  "exchange": "Cboe US",
+  "name": "Global X U.S. Infrastructure Development ETF",
+  "type": "ETF"
+ },
+ "QUAL": {
+  "checked": "2026-10-14T21:26:31.552334+00:00",
+  "currency": "USD",
+  "exchange": "Cboe US",
+  "name": "iShares MSCI USA Quality Factor ETF",
+  "type": "ETF"
+ },
+ "RSP": {
+  "checked": "2026-10-14T21:26:30.678173+00:00",
+  "currency": "USD",
+  "exchange": "NYSEArca",
+  "name": "Invesco S&P 500 Equal Weight ETF",
+  "type": "ETF"
+ },
+ "SHY": {
+  "checked": "2026-10-14T21:26:35.635550+00:00",
+  "currency": "USD",
+  "exchange": "NasdaqGM",
+  "name": "iShares 1-3 Year Treasury Bond ETF",
+  "type": "ETF"
+ },
+ "SMH": {
+  "checked": "2026-10-14T21:26:21.107203+00:00",
+  "currency": "USD",
+  "exchange": "NasdaqGM",
+  "name": "VanEck Semiconductor ETF",
+  "type": "ETF"
+ },
+ "SPHB": {
+  "checked": "2026-10-14T21:26:33.891924+00:00",
+  "currency": "USD",
+  "exchange": "NYSEArca",
+  "name": "Invesco S&P 500 High Beta ETF",
+  "type": "ETF"
+ },
+ "SPLV": {
+  "checked": "2026-10-14T21:26:34.323273+00:00",
+  "currency": "USD",
+  "exchange": "NYSEArca",
+  "name": "Invesco S&P 500 Low Volatility ETF",
+  "type": "ETF"
+ },
+ "SPY": {
+  "checked": "2026-10-14T21:26:15.830372+00:00",
+  "currency": "USD",
+  "exchange": "NYSEArca",
+  "name": "State Street SPDR S&P 500 ETF Trust",
+  "type": "ETF"
+ },
+ "TAN": {
+  "checked": "2026-10-14T21:26:28.027881+00:00",
+  "currency": "USD",
+  "exchange": "NYSEArca",
+  "name": "Invesco Solar ETF",
+  "type": "ETF"
+ },
+ "TLT": {
+  "checked": "2026-10-14T21:26:34.751051+00:00",
+  "currency": "USD",
+  "exchange": "NasdaqGM",
+  "name": "iShares 20+ Year Treasury Bond ETF",
+  "type": "ETF"
+ },
+ "URA": {
+  "checked": "2026-10-14T21:26:29.722469+00:00",
+  "currency": "USD",
+  "exchange": "NYSEArca",
+  "name": "Global X Uranium ETF",
+  "type": "ETF"
+ },
+ "USMV": {
+  "checked": "2026-10-14T21:26:31.976978+00:00",
+  "currency": "USD",
+  "exchange": "Cboe US",
+  "name": "iShares MSCI USA Min Vol Factor ETF",
+  "type": "ETF"
+ },
+ "VLUE": {
+  "checked": "2026-10-14T21:26:32.470465+00:00",
+  "currency": "USD",
+  "exchange": "Cboe US",
+  "name": "iShares MSCI USA Value Factor ETF",
+  "type": "ETF"
+ },
+ "XBI": {
+  "checked": "2026-10-14T21:26:21.961961+00:00",
+  "currency": "USD",
+  "exchange": "NYSEArca",
+  "name": "State Street SPDR S&P Biotech ETF",
+  "type": "ETF"
+ },
+ "XLB": {
+  "checked": "2026-10-14T21:26:19.792396+00:00",
+  "currency": "USD",
+  "exchange": "NYSEArca",
+  "name": "State Street Materials Select Sector SPDR ETF",
+  "type": "ETF"
+ },
+ "XLC": {
+  "checked": "2026-10-14T21:26:16.678717+00:00",
+  "currency": "USD",
+  "exchange": "NYSEArca",
+  "name": "State Street Communication Services Select Sector SPDR ETF",
+  "type": "ETF"
+ },
+ "XLE": {
+  "checked": "2026-10-14T21:26:18.001720+00:00",
+  "currency": "USD",
+  "exchange": "NYSEArca",
+  "name": "State Street Energy Select Sector SPDR ETF",
+  "type": "ETF"
+ },
+ "XLF": {
+  "checked": "2026-10-14T21:26:18.444971+00:00",
+  "currency": "USD",
+  "exchange": "NYSEArca",
+  "name": "State Street Financial Select Sector SPDR ETF",
+  "type": "ETF"
+ },
+ "XLI": {
+  "checked": "2026-10-14T21:26:19.355190+00:00",
+  "currency": "USD",
+  "exchange": "NYSEArca",
+  "name": "State Street Industrial Select Sector SPDR ETF",
+  "type": "ETF"
+ },
+ "XLK": {
+  "checked": "2026-10-14T21:26:16.259532+00:00",
+  "currency": "USD",
+  "exchange": "NYSEArca",
+  "name": "State Street Technology Select Sector SPDR ETF",
+  "type": "ETF"
+ },
+ "XLP": {
+  "checked": "2026-10-14T21:26:17.542539+00:00",
+  "currency": "USD",
+  "exchange": "NYSEArca",
+  "name": "State Street Consumer Staples Select Sector SPDR ETF",
+  "type": "ETF"
+ },
+ "XLRE": {
+  "checked": "2026-10-14T21:26:20.214356+00:00",
+  "currency": "USD",
+  "exchange": "NYSEArca",
+  "name": "State Street Real Estate Select Sector SPDR ETF",
+  "type": "ETF"
+ },
+ "XLU": {
+  "checked": "2026-10-14T21:26:20.646044+00:00",
+  "currency": "USD",
+  "exchange": "NYSEArca",
+  "name": "State Street Utilities Select Sector SPDR ETF",
+  "type": "ETF"
+ },
+ "XLV": {
+  "checked": "2026-10-14T21:26:18.925127+00:00",
+  "currency": "USD",
+  "exchange": "NYSEArca",
+  "name": "State Street Health Care Select Sector SPDR ETF",
+  "type": "ETF"
+ },
+ "XLY": {
+  "checked": "2026-10-14T21:26:17.108983+00:00",
+  "currency": "USD",
+  "exchange": "NYSEArca",
+  "name": "State Street Consumer Discretionary Select Sector SPDR ETF",
+  "type": "ETF"
+ },
+ "XME": {
+  "checked": "2026-10-14T21:26:25.190321+00:00",
+  "currency": "USD",
+  "exchange": "NYSEArca",
+  "name": "State Street SPDR S&P Metals & Mining ETF",
+  "type": "ETF"
+ },
+ "XOP": {
+  "checked": "2026-10-14T21:26:25.690473+00:00",
+  "currency": "USD",
+  "exchange": "NYSEArca",
+  "name": "State Street SPDR S&P Oil & Gas Exploration & Production ETF",
+  "type": "ETF"
+ },
+ "XRT": {
+  "checked": "2026-10-14T21:26:24.708993+00:00",
+  "currency": "USD",
+  "exchange": "NYSEArca",
+  "name": "State Street SPDR S&P Retail ETF",
+  "type": "ETF"
+ },
+ "^MOVE": {
+  "checked": "2026-10-14T21:26:39.901361+00:00",
+  "currency": "USD",
+  "exchange": "NYSE",
+  "name": "Northern Trust iBoxx 5-Year Tar",
+  "type": "INDEX"
+ },
+ "^VIX": {
+  "checked": "2026-10-14T21:26:39.469203+00:00",
+  "currency": "USD",
+  "exchange": "Cboe Indices",
+  "name": "CBOE Volatility Index",
+  "type": "INDEX"
+ }
+}
