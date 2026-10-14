@@ -1,0 +1,28 @@
+{
+ "as_of": "2026-10-14",
+ "generated": "2026-10-14 21:29 UTC",
+ "demo": false,
+ "macro": {
+  "phase": "Mid",
+  "confidence": 69,
+  "heading": "Holding in Mid"
+ },
+ "market": {
+  "phase": "Mid",
+  "confidence": 19
+ },
+ "exposure": "normal",
+ "health": {
+  "price_last": "2026-10-14",
+  "price_stale": false,
+  "price_missing": [],
+  "price_sources": [
+   "yahoo"
+  ],
+  "fred_failed": [],
+  "fred_via": "csv",
+  "stale_series": [],
+  "ticker_issues": [],
+  "n_prices": 55
+ }
+}
