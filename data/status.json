@@ -1,22 +1,22 @@
 {
- "as_of": "2026-10-15",
- "generated": "2026-10-15 22:40 UTC",
+ "as_of": "2026-10-16",
+ "generated": "2026-10-16 22:40 UTC",
  "demo": false,
  "macro": {
   "phase": "Mid",
-  "confidence": 71,
+  "confidence": 72,
   "heading": "Holding in Mid"
  },
  "market": {
   "phase": "Mid",
-  "confidence": 14
+  "confidence": 11
  },
  "exposure": "normal",
  "mood": {
   "stage": "Excitement",
-  "phi": 129.8,
-  "confidence": 33,
-  "gauge": 30,
+  "phi": 129.6,
+  "confidence": 32,
+  "gauge": 18,
   "switches_per_year": 9.4,
   "turning_points": [
    {
@@ -71,7 +71,7 @@
   ]
  },
  "health": {
-  "price_last": "2026-10-15",
+  "price_last": "2026-10-16",
   "price_stale": false,
   "price_missing": [],
   "price_sources": [
