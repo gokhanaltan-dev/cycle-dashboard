@@ -1,6 +1,6 @@
 {
- "as_of": "2026-10-20",
- "generated": "2026-10-20 22:40 UTC",
+ "as_of": "2026-10-22",
+ "generated": "2026-10-22 22:39 UTC",
  "demo": false,
  "macro": {
   "phase": "Mid",
@@ -9,14 +9,14 @@
  },
  "market": {
   "phase": "Mid",
-  "confidence": 6
+  "confidence": 4
  },
  "exposure": "normal",
  "mood": {
   "stage": "Excitement",
-  "phi": 131.0,
-  "confidence": 31,
-  "gauge": 24,
+  "phi": 133.2,
+  "confidence": 29,
+  "gauge": 13,
   "switches_per_year": 9.2,
   "turning_points": [
    {
@@ -71,7 +71,7 @@
   ]
  },
  "health": {
-  "price_last": "2026-10-20",
+  "price_last": "2026-10-22",
   "price_stale": false,
   "price_missing": [],
   "price_sources": [
