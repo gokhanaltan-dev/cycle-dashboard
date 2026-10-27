@@ -1,6 +1,6 @@
 {
- "as_of": "2026-10-26",
- "generated": "2026-10-26 22:42 UTC",
+ "as_of": "2026-10-27",
+ "generated": "2026-10-27 22:43 UTC",
  "demo": false,
  "macro": {
   "phase": "Mid",
@@ -14,9 +14,9 @@
  "exposure": "normal",
  "mood": {
   "stage": "Excitement",
-  "phi": 135.2,
-  "confidence": 26,
-  "gauge": 14,
+  "phi": 137.3,
+  "confidence": 25,
+  "gauge": 18,
   "switches_per_year": 9.2,
   "turning_points": [
    {
@@ -71,7 +71,7 @@
   ]
  },
  "health": {
-  "price_last": "2026-10-26",
+  "price_last": "2026-10-27",
   "price_stale": false,
   "price_missing": [],
   "price_sources": [
