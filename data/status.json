@@ -1,6 +1,6 @@
 {
- "as_of": "2026-11-09",
- "generated": "2026-11-09 22:53 UTC",
+ "as_of": "2026-11-10",
+ "generated": "2026-11-10 22:51 UTC",
  "demo": false,
  "macro": {
   "phase": "Mid",
@@ -9,7 +9,7 @@
  },
  "market": {
   "phase": "Late",
-  "confidence": 33
+  "confidence": 32
  },
  "exposure": "normal",
  "mood": {
@@ -71,7 +71,7 @@
   ]
  },
  "health": {
-  "price_last": "2026-11-09",
+  "price_last": "2026-11-10",
   "price_stale": false,
   "price_missing": [],
   "price_sources": [
