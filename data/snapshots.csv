@@ -23,3 +23,4 @@ date,macro_phase,macro_conf,market_phase,market_conf,exposure,top3,risk_appetite
 2026-11-13,Mid,45,Late,30,normal,XLV XLP XLE,0.0,Excitement,25.0
 2026-11-16,Mid,40,Late,29,reduced,XLV XLP XLF,-0.15,Excitement,14.0
 2026-11-17,Mid,40,Late,29,reduced,XLV XLP XLF,-0.15,Excitement,10.0
+2026-11-18,Mid,36,Late,27,reduced,XLP XLV XLF,-0.15,Excitement,8.0
