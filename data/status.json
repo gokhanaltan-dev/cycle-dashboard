@@ -1,23 +1,23 @@
 {
- "as_of": "2026-11-19",
- "generated": "2026-11-20 03:12 UTC",
+ "as_of": "2026-11-20",
+ "generated": "2026-11-21 03:12 UTC",
  "demo": false,
  "macro": {
   "phase": "Mid",
-  "confidence": 33,
+  "confidence": 34,
   "heading": "Heading toward Late"
  },
  "market": {
   "phase": "Late",
-  "confidence": 28
+  "confidence": 29
  },
  "exposure": "reduced",
  "mood": {
-  "stage": "Excitement",
-  "phi": 142.2,
-  "confidence": 21,
-  "gauge": 10,
-  "switches_per_year": 9.0,
+  "stage": "Panic",
+  "phi": 304.6,
+  "confidence": 65,
+  "gauge": 3,
+  "switches_per_year": 9.2,
   "turning_points": [
    {
     "peak": "1998-07-22",
@@ -71,7 +71,7 @@
   ]
  },
  "health": {
-  "price_last": "2026-11-19",
+  "price_last": "2026-11-20",
   "price_stale": false,
   "price_missing": [],
   "price_sources": [
